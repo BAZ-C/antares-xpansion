@@ -13,6 +13,7 @@
 #include "FileInBuffer.h"
 #include "ProblemGenerationLogger.h"
 #include "ProblemModifier.h"
+#include "VariableFileReader.h"
 #include "common_lpnamer.h"
 
 const std::string CANDIDATES_INI{"candidates.ini"};

@@ -5,7 +5,6 @@
 #include <execution>
 
 #include "MyAdapter.h"
-#include "VariableFileReader.h"
 #include "helpers/StringUtils.h"
 #include "solver_utils.h"
 
@@ -71,16 +70,13 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
       "CoutExtremiteVersOrigineDeLInterconnexion";
   std::istringstream variableFileContent =
       adapter.reader_extract(problemData, reader);
-  auto variableReader = VariableFileReader(variableFileContent, _links,
-                                           variable_name_config, logger_);
-
-  std::vector<std::string> var_names = variableReader.getVariables();
-  std::map<colId, ColumnsToChange> p_ntc_columns =
-      variableReader.getNtcVarColumns();
-  std::map<colId, ColumnsToChange> p_direct_cost_columns =
-      variableReader.getDirectCostVarColumns();
-  std::map<colId, ColumnsToChange> p_indirect_cost_columns =
-      variableReader.getIndirectCostVarColumns();
+  std::vector<std::string> var_names;
+  std::map<colId, ColumnsToChange> p_ntc_columns;
+  std::map<colId, ColumnsToChange> p_direct_cost_columns;
+  std::map<colId, ColumnsToChange> p_indirect_cost_columns;
+  adapter.extract_variables(variable_name_config, variableFileContent,
+                            var_names, p_ntc_columns, p_direct_cost_columns,
+                            p_indirect_cost_columns, _links, logger_);
 
   adapter.reader_extract_file(problemData, reader, lpDir_);
 
