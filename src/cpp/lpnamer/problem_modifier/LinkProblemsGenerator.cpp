@@ -58,8 +58,6 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
 
-  auto const lp_mps_name = lpDir_ / problemData._problem_mps;
-
   std::istringstream variableFileContent =
       adapter.reader_extract(problemData, reader);
 
@@ -74,7 +72,7 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
   adapter.reader_extract_file(problemData, reader, lpDir_);
 
   std::shared_ptr<Problem> in_prblm =
-      adapter.get_solver_ptr(lp_mps_name, _solver_name);
+      adapter.get_solver_ptr(_solver_name, lpDir_, problemData);
 
   solver_rename_vars(in_prblm, var_names);
 
@@ -95,6 +93,7 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
   }
 
   // Another port/adapter to write data
+  auto const lp_mps_name = lpDir_ / problemData._problem_mps;
   in_prblm->write_prob_mps(lp_mps_name);
   writer.AddFileInArchive(lp_mps_name);
   std::filesystem::remove(lp_mps_name);

@@ -20,7 +20,7 @@ class MyAdapter {
       std::map<colId, ColumnsToChange>& p_indirect_cost_columns,
       const std::vector<ActiveLink>& links,
       ProblemGenerationLog::ProblemGenerationLoggerSharedPointer logger) const;
-  std::shared_ptr<Problem> get_solver_ptr(
-      const std::filesystem::path& lp_mps_name,
-      const std::string solver_name) const;
+  [[nodiscard]] std::shared_ptr<Problem> get_solver_ptr(
+      const std::string& solver_name, const std::filesystem::path& lpDir,
+      const ProblemData& problemData) const;
 };

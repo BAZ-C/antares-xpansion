@@ -48,9 +48,10 @@ void MyAdapter::extract_variables(
   p_indirect_cost_columns = variableReader.getIndirectCostVarColumns();
 }
 std::shared_ptr<Problem> MyAdapter::get_solver_ptr(
-    const std::filesystem::path& lp_mps_name,
-    const std::string solver_name) const {
+    const std::string& solver_name, std::filesystem::path const& lpDir,
+    const ProblemData& problemData) const {
   SolverFactory factory;
+  auto const lp_mps_name = lpDir / problemData._problem_mps;
   auto in_prblm = std::make_shared<Problem>(factory.create_solver(solver_name));
 
   in_prblm->read_prob_mps(lp_mps_name);
