@@ -82,11 +82,11 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
   std::map<colId, ColumnsToChange> p_indirect_cost_columns =
       variableReader.getIndirectCostVarColumns();
 
+  adapter.reader_extract_file(problemData, reader, lpDir_);
+
   SolverFactory factory;
   auto in_prblm =
       std::make_shared<Problem>(factory.create_solver(_solver_name));
-
-  reader.ExtractFile(problemData._problem_mps, lpDir_);
 
   in_prblm->read_prob_mps(lp_mps_name);
 
