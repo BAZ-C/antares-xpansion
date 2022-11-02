@@ -11,6 +11,7 @@
 #include "ArchiveWriter.h"
 #include "Candidate.h"
 #include "FileInBuffer.h"
+#include "MyAdapter.h"
 #include "ProblemGenerationLogger.h"
 #include "ProblemModifier.h"
 #include "VariableFileReader.h"
