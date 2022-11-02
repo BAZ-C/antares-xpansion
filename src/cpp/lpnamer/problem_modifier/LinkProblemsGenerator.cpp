@@ -73,11 +73,8 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
 
   adapter.reader_extract_file(problemData, reader, lpDir_);
 
-  SolverFactory factory;
-  auto in_prblm =
-      std::make_shared<Problem>(factory.create_solver(_solver_name));
-
-  in_prblm->read_prob_mps(lp_mps_name);
+  std::shared_ptr<Problem> in_prblm =
+      adapter.get_solver_ptr(lp_mps_name, _solver_name);
 
   solver_rename_vars(in_prblm, var_names);
 
