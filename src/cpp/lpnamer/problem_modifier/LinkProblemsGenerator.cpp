@@ -97,6 +97,7 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
     }
   }
 
+  // Another port/adapter to write data
   in_prblm->write_prob_mps(lp_mps_name);
   writer.AddFileInArchive(lp_mps_name);
   std::filesystem::remove(lp_mps_name);
