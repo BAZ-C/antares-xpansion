@@ -4,6 +4,7 @@
 #include <cassert>
 #include <execution>
 
+#include "MyAdapter.h"
 #include "VariableFileReader.h"
 #include "helpers/StringUtils.h"
 #include "solver_utils.h"
@@ -55,6 +56,7 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
                                   ProblemData const &problemData,
                                   Couplings &couplings, ArchiveReader &reader,
                                   ArchiveWriter &writer) const {
+  MyAdapter adapter;
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
 
@@ -67,8 +69,8 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
       "CoutOrigineVersExtremiteDeLInterconnexion";
   variable_name_config.cost_extremite_variable_name =
       "CoutExtremiteVersOrigineDeLInterconnexion";
-  auto variableFileContent =
-      reader.ExtractFileInStringStream(problemData._variables_txt);
+  std::istringstream variableFileContent =
+      adapter.reader_extract(problemData, reader);
   auto variableReader = VariableFileReader(variableFileContent, _links,
                                            variable_name_config, logger_);
 
