@@ -1,7 +1,6 @@
 #include "LinkProblemsGenerator.h"
 
 #include <algorithm>
-#include <cassert>
 #include <execution>
 
 #include "MyAdapter.h"
@@ -61,22 +60,16 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
 
   auto const lp_mps_name = lpDir_ / problemData._problem_mps;
 
-  // List of variables
-  VariableFileReadNameConfiguration variable_name_config;
-  variable_name_config.ntc_variable_name = "ValeurDeNTCOrigineVersExtremite";
-  variable_name_config.cost_origin_variable_name =
-      "CoutOrigineVersExtremiteDeLInterconnexion";
-  variable_name_config.cost_extremite_variable_name =
-      "CoutExtremiteVersOrigineDeLInterconnexion";
   std::istringstream variableFileContent =
       adapter.reader_extract(problemData, reader);
+
   std::vector<std::string> var_names;
   std::map<colId, ColumnsToChange> p_ntc_columns;
   std::map<colId, ColumnsToChange> p_direct_cost_columns;
   std::map<colId, ColumnsToChange> p_indirect_cost_columns;
-  adapter.extract_variables(variable_name_config, variableFileContent,
-                            var_names, p_ntc_columns, p_direct_cost_columns,
-                            p_indirect_cost_columns, _links, logger_);
+  adapter.extract_variables(variableFileContent, var_names, p_ntc_columns,
+                            p_direct_cost_columns, p_indirect_cost_columns,
+                            _links, logger_);
 
   adapter.reader_extract_file(problemData, reader, lpDir_);
 

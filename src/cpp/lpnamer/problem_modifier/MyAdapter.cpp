@@ -25,7 +25,6 @@ void MyAdapter::reader_extract_file(const ProblemData& problemData,
 }
 
 void MyAdapter::extract_variables(
-    const VariableFileReadNameConfiguration& variable_name_config,
     std::istringstream& variableFileContent,
     std::vector<std::string>& var_names,
     std::map<colId, ColumnsToChange>& p_ntc_columns,
@@ -33,6 +32,14 @@ void MyAdapter::extract_variables(
     std::map<colId, ColumnsToChange>& p_indirect_cost_columns,
     const std::vector<ActiveLink>& links,
     ProblemGenerationLog::ProblemGenerationLoggerSharedPointer logger) const {
+  // List of variables
+  VariableFileReadNameConfiguration variable_name_config;
+  variable_name_config.ntc_variable_name = "ValeurDeNTCOrigineVersExtremite";
+  variable_name_config.cost_origin_variable_name =
+      "CoutOrigineVersExtremiteDeLInterconnexion";
+  variable_name_config.cost_extremite_variable_name =
+      "CoutExtremiteVersOrigineDeLInterconnexion";
+
   auto variableReader = VariableFileReader(variableFileContent, links,
                                            variable_name_config, logger);
   var_names = variableReader.getVariables();

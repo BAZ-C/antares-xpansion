@@ -13,7 +13,6 @@ class MyAdapter {
                            ArchiveReader& reader,
                            std::filesystem::path lpDir) const;
   void extract_variables(
-      const VariableFileReadNameConfiguration& variable_name_config,
       std::istringstream& variableFileContent,
       std::vector<std::string>& var_names,
       std::map<colId, ColumnsToChange>& p_ntc_columns,
