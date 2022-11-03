@@ -56,16 +56,23 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
                                   ArchiveWriter &writer) const {
   MyAdapter adapter;
   // get path of file problem***.mps, variable***.txt and constraints***.txt
+  auto const mps_name = root / problemData._problem_mps;
+
+  std::istringstream variableFileContent =
+      adapter.reader_extract(problemData, reader);
 
   std::vector<std::string> var_names;
   std::map<colId, ColumnsToChange> p_ntc_columns;
   std::map<colId, ColumnsToChange> p_direct_cost_columns;
   std::map<colId, ColumnsToChange> p_indirect_cost_columns;
-  std::shared_ptr<Problem> in_prblm;
-  adapter.provide_problem(problemData, reader, adapter, var_names,
-                          p_ntc_columns, p_direct_cost_columns,
-                          p_indirect_cost_columns, in_prblm, _solver_name,
-                          lpDir_, logger_, _links);
+  adapter.extract_variables(variableFileContent, var_names, p_ntc_columns,
+                            p_direct_cost_columns, p_indirect_cost_columns,
+                            _links, logger_);
+
+  adapter.reader_extract_file(problemData, reader, lpDir_);
+
+  std::shared_ptr<Problem> in_prblm =
+      adapter.get_solver_ptr(_solver_name, lpDir_, problemData);
 
   solver_rename_vars(in_prblm, var_names);
 
@@ -75,7 +82,6 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
       p_indirect_cost_columns);
 
   // couplings creation
-  auto const mps_name = root / problemData._problem_mps;
   for (const ActiveLink &link : _links) {
     for (const Candidate &candidate : link.getCandidates()) {
       if (problem_modifier.has_candidate_col_id(candidate.get_name())) {

@@ -5,6 +5,8 @@
 #include "MyAdapter.h"
 
 #include <algorithm>
+#include <cassert>
+#include <execution>
 
 #include "LinkProblemsGenerator.h"
 #include "VariableFileReader.h"
@@ -54,23 +56,4 @@ std::shared_ptr<Problem> MyAdapter::get_solver_ptr(
 
   in_prblm->read_prob_mps(lp_mps_name);
   return in_prblm;
-}
-void MyAdapter::provide_problem(
-    const ProblemData& problemData, ArchiveReader& reader,
-    const MyAdapter& adapter, std::vector<std::string>& var_names,
-    std::map<colId, ColumnsToChange>& p_ntc_columns,
-    std::map<colId, ColumnsToChange>& p_direct_cost_columns,
-    std::map<colId, ColumnsToChange>& p_indirect_cost_columns,
-    std::shared_ptr<Problem>& in_prblm, const std::string& solver_name,
-    const std::filesystem::path& lpDir,
-    const ProblemGenerationLog::ProblemGenerationLoggerSharedPointer& logger,
-    const std::vector<ActiveLink>& links) const {
-  std::istringstream variableFileContent =
-      adapter.reader_extract(problemData, reader);
-  adapter.extract_variables(variableFileContent, var_names, p_ntc_columns,
-                            p_direct_cost_columns, p_indirect_cost_columns,
-                            links, logger);
-
-  adapter.reader_extract_file(problemData, reader, lpDir);
-  in_prblm = adapter.get_solver_ptr(solver_name, lpDir, problemData);
 }
