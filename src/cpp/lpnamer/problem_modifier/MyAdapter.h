@@ -7,7 +7,7 @@
 #include "LinkProblemsGenerator.h"
 class MyAdapter {
  public:
-  explicit MyAdapter(std::filesystem::path lp_dir);
+  explicit MyAdapter(std::filesystem::path lp_dir, ProblemData data);
   std::istringstream reader_extract(const ProblemData& problemData,
                                     ArchiveReader& reader) const;
   void reader_extract_file(const ProblemData& problemData,
@@ -22,6 +22,7 @@ class MyAdapter {
       const std::vector<ActiveLink>& links,
       ProblemGenerationLog::ProblemGenerationLoggerSharedPointer logger) const;
   [[nodiscard]] std::shared_ptr<Problem> provide_problem(
-      const std::string& solver_name, const ProblemData& problemData) const;
+      const std::string& solver_name) const;
   const std::filesystem::path lp_dir_;
+  const ProblemData problem_data_;
 };
