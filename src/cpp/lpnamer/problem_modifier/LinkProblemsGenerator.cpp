@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <execution>
 
+#include "IProblemProviderPort.h"
 #include "MyAdapter.h"
 #include "helpers/StringUtils.h"
 #include "solver_utils.h"
