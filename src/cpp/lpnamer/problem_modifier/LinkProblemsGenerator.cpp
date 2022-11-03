@@ -54,7 +54,7 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
                                   ProblemData const &problemData,
                                   Couplings &couplings, ArchiveReader &reader,
                                   ArchiveWriter &writer) const {
-  MyAdapter adapter;
+  MyAdapter adapter(lpDir_);
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
 
@@ -72,7 +72,7 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
   adapter.reader_extract_file(problemData, reader, lpDir_);
 
   std::shared_ptr<Problem> in_prblm =
-      adapter.get_solver_ptr(_solver_name, lpDir_, problemData);
+      adapter.provide_problem(_solver_name, problemData);
 
   solver_rename_vars(in_prblm, var_names);
 

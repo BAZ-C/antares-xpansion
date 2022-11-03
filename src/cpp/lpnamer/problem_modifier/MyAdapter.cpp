@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <cassert>
 #include <execution>
+#include <utility>
 
 #include "LinkProblemsGenerator.h"
 #include "VariableFileReader.h"
@@ -47,13 +48,14 @@ void MyAdapter::extract_variables(
   p_direct_cost_columns = variableReader.getDirectCostVarColumns();
   p_indirect_cost_columns = variableReader.getIndirectCostVarColumns();
 }
-std::shared_ptr<Problem> MyAdapter::get_solver_ptr(
-    const std::string& solver_name, std::filesystem::path const& lpDir,
-    const ProblemData& problemData) const {
+std::shared_ptr<Problem> MyAdapter::provide_problem(
+    const std::string& solver_name, const ProblemData& problemData) const {
   SolverFactory factory;
-  auto const lp_mps_name = lpDir / problemData._problem_mps;
+  auto const lp_mps_name = lp_dir_ / problemData._problem_mps;
   auto in_prblm = std::make_shared<Problem>(factory.create_solver(solver_name));
 
   in_prblm->read_prob_mps(lp_mps_name);
   return in_prblm;
 }
+MyAdapter::MyAdapter(std::filesystem::path lp_dir)
+    : lp_dir_(std::move(lp_dir)) {}
