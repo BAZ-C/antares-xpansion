@@ -78,9 +78,9 @@ void LinkProblemsGenerator::treat(
   solver_rename_vars(in_prblm, var_names);
 
   auto problem_modifier = ProblemModifier(logger_);
-  in_prblm = problem_modifier.changeProblem(
-      std::move(in_prblm), _links, p_ntc_columns, p_direct_cost_columns,
-      p_indirect_cost_columns);
+  in_prblm = problem_modifier.changeProblem(in_prblm, _links, p_ntc_columns,
+                                            p_direct_cost_columns,
+                                            p_indirect_cost_columns);
 
   // couplings creation
   for (const ActiveLink &link : _links) {
