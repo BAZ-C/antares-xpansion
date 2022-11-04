@@ -51,10 +51,10 @@ std::vector<ProblemData> LinkProblemsGenerator::readMPSList(
  * correspondence between optimizer variables and interconnection candidates
  * \return void
  */
-void LinkProblemsGenerator::treat(const std::filesystem::path &root,
-                                  ProblemData const &problemData,
-                                  Couplings &couplings, ArchiveReader &reader,
-                                  ArchiveWriter &writer) const {
+void LinkProblemsGenerator::treat(
+    const std::filesystem::path &root, ProblemData const &problemData,
+    Couplings &couplings, ArchiveReader &reader, ArchiveWriter &writer,
+    IProblemProviderPort *problem_provider) const {
   MyAdapter adapter(lpDir_, problemData);
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
@@ -72,7 +72,8 @@ void LinkProblemsGenerator::treat(const std::filesystem::path &root,
 
   adapter.reader_extract_file(problemData, reader, lpDir_);
 
-  std::shared_ptr<Problem> in_prblm = adapter.provide_problem(_solver_name);
+  std::shared_ptr<Problem> in_prblm =
+      problem_provider->provide_problem(_solver_name);
 
   solver_rename_vars(in_prblm, var_names);
 
@@ -119,9 +120,11 @@ void LinkProblemsGenerator::treatloop(const std::filesystem::path &root,
   auto writer = ArchiveWriter(tmpArchivePath);
   writer.Open();
   auto mpsList = readMPSList(mps_file_name);
-  std::for_each(
-      std::execution::par, mpsList.begin(), mpsList.end(),
-      [&](const auto &mps) { treat(root, mps, couplings, reader, writer); });
+  std::for_each(std::execution::par, mpsList.begin(), mpsList.end(),
+                [&](const auto &mps) {
+                  MyAdapter adapter(lpDir_, mps);
+                  treat(root, mps, couplings, reader, writer, &adapter);
+                });
   reader.Close();
   reader.Delete();
   writer.Close();

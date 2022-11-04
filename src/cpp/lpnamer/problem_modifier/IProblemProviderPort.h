@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "LinkProblemsGenerator.h"
+#include "Problem.h"
 class IProblemProviderPort {
  public:
   virtual ~IProblemProviderPort() = default;
