@@ -55,7 +55,7 @@ void LinkProblemsGenerator::treat(
     const std::filesystem::path &root, ProblemData const &problemData,
     Couplings &couplings, ArchiveReader &reader, ArchiveWriter &writer,
     IProblemProviderPort *problem_provider) const {
-  MyAdapter adapter(lpDir_, problemData);
+  MyAdapter adapter(root, problemData);
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
 
@@ -70,7 +70,7 @@ void LinkProblemsGenerator::treat(
                             p_direct_cost_columns, p_indirect_cost_columns,
                             _links, logger_);
 
-  adapter.reader_extract_file(problemData, reader, lpDir_);
+  adapter.reader_extract_file(problemData, reader, root);
 
   std::shared_ptr<Problem> in_prblm =
       problem_provider->provide_problem(_solver_name);
@@ -115,7 +115,7 @@ void LinkProblemsGenerator::treatloop(const std::filesystem::path &root,
                                       ArchiveReader &reader) {
   std::for_each(std::execution::par, mps_list.begin(), mps_list.end(),
                 [&](const auto &mps) {
-                  MyAdapter adapter(lpDir_, mps);
+                  MyAdapter adapter(root, mps);
                   treat(root, mps, couplings, reader, writer, &adapter);
                 });
 }
