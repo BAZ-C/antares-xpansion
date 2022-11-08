@@ -103,8 +103,8 @@ int main(int argc, char **argv) {
 
     auto const mps_file_name = root / MPS_TXT;
     auto lpDir_ = root / "lp";
-    auto reader = ArchiveReader(archivePath);
-    reader.Open();
+    auto reader = std::make_shared<ArchiveReader>(archivePath);
+    reader->Open();
     const auto tmpArchiveName = MPS_ZIP_FILE + "-tmp" + ZIP_EXT;
     const auto tmpArchivePath = lpDir_ / tmpArchiveName;
     auto writer = std::make_shared<ArchiveWriter>(tmpArchivePath);
@@ -119,8 +119,8 @@ int main(int argc, char **argv) {
 
     std::filesystem::remove(archivePath);
     std::filesystem::rename(tmpArchivePath, lpDir_ / (MPS_ZIP_FILE + ZIP_EXT));
-    reader.Close();
-    reader.Delete();
+    reader->Close();
+    reader->Delete();
     writer->Close();
     writer->Delete();
 

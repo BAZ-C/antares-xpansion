@@ -7,6 +7,7 @@
 #include "IProblemProviderPort.h"
 #include "IProblemWriter.h"
 #include "MyAdapter.h"
+#include "ProblemVariablesZipAdapter.h"
 #include "helpers/StringUtils.h"
 #include "solver_utils.h"
 
@@ -53,36 +54,33 @@ std::vector<ProblemData> LinkProblemsGenerator::readMPSList(
  * correspondence between optimizer variables and interconnection candidates
  * \return void
  */
+
 void LinkProblemsGenerator::treat(
     const std::filesystem::path &root, ProblemData const &problemData,
-    Couplings &couplings, ArchiveReader &reader, IProblemWriter *writer,
-    IProblemProviderPort *problem_provider) const {
+    Couplings &couplings, std::shared_ptr<ArchiveReader> reader,
+    IProblemWriter *writer, IProblemProviderPort *problem_provider) const {
   MyAdapter adapter(root, problemData);
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
 
-  std::istringstream variableFileContent =
-      adapter.reader_extract(problemData, reader);
-
-  std::vector<std::string> var_names;
-  std::map<colId, ColumnsToChange> p_ntc_columns;
-  std::map<colId, ColumnsToChange> p_direct_cost_columns;
-  std::map<colId, ColumnsToChange> p_indirect_cost_columns;
-  adapter.extract_variables(variableFileContent, var_names, p_ntc_columns,
-                            p_direct_cost_columns, p_indirect_cost_columns,
-                            _links, logger_);
-
-  adapter.reader_extract_file(problemData, reader, root);
+  adapter.reader_extract_file(problemData, *reader, root);
 
   std::shared_ptr<Problem> in_prblm =
       problem_provider->provide_problem(_solver_name);
 
-  solver_rename_vars(in_prblm, var_names);
+  auto problem_variables_from_zip_adapter =
+      std::make_shared<ProblemVariablesZipAdapter>(reader, problemData, _links,
+                                                   logger_);
+  ProblemVariables problem_variables =
+      problem_variables_from_zip_adapter->Provide();
+
+  solver_rename_vars(in_prblm, problem_variables.variable_names);
 
   auto problem_modifier = ProblemModifier(logger_);
-  in_prblm = problem_modifier.changeProblem(in_prblm, _links, p_ntc_columns,
-                                            p_direct_cost_columns,
-                                            p_indirect_cost_columns);
+  in_prblm = problem_modifier.changeProblem(
+      in_prblm, _links, problem_variables.ntc_columns,
+      problem_variables.direct_cost_columns,
+      problem_variables.indirect_cost_columns);
 
   // couplings creation
   for (const ActiveLink &link : _links) {
@@ -109,7 +107,7 @@ void LinkProblemsGenerator::treatloop(const std::filesystem::path &root,
                                       Couplings &couplings,
                                       const std::vector<ProblemData> &mps_list,
                                       IProblemWriter *writer,
-                                      ArchiveReader &reader) {
+                                      std::shared_ptr<ArchiveReader> reader) {
   std::for_each(std::execution::par, mps_list.begin(), mps_list.end(),
                 [&](const auto &mps) {
                   MyAdapter adapter(root, mps);

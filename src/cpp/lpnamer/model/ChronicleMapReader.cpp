@@ -35,7 +35,7 @@ void ScenarioToChronicleReader::ignoreFirstLine(std::istream& ss) const {
 
 std::map<unsigned int, unsigned int> ScenarioToChronicleReader::read(
     std::istream& input) const {
-  ignoreFirstLine(input);
+  // ignoreFirstLine(input);
   AssignChronicleValuesToMCYears(input);
 
   return chronicle_map;

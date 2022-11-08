@@ -44,13 +44,13 @@ class LinkProblemsGenerator {
 
   void treatloop(const std::filesystem::path& root, Couplings& couplings,
                  const std::vector<ProblemData>& mps_list,
-                 IProblemWriter* writer, ArchiveReader& reader);
+                 IProblemWriter* writer, std::shared_ptr<ArchiveReader> reader);
   std::vector<ProblemData> readMPSList(
       const std::filesystem::path& mps_filePath_p) const;
 
  private:
   void treat(const std::filesystem::path& root, ProblemData const& problemData,
-             Couplings& couplings, ArchiveReader& reader,
+             Couplings& couplings, std::shared_ptr<ArchiveReader> reader,
              IProblemWriter* writer,
              IProblemProviderPort* problem_provider) const;
 
