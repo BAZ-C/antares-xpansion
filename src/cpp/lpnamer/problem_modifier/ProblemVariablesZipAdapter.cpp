@@ -4,6 +4,8 @@
 
 #include "ProblemVariablesZipAdapter.h"
 
+#include <utility>
+
 #include "ArchiveReader.h"
 #include "LinkProblemsGenerator.h"
 void ProblemVariablesZipAdapter::extract_variables(
@@ -40,10 +42,10 @@ ProblemVariables ProblemVariablesZipAdapter::Provide() {
   return result;
 }
 ProblemVariablesZipAdapter::ProblemVariablesZipAdapter(
-    std::shared_ptr<ArchiveReader> reader, const ProblemData data,
+    std::shared_ptr<ArchiveReader> reader, ProblemData data,
     const std::vector<ActiveLink>& vector,
-    const std::shared_ptr<ProblemGenerationLog::ProblemGenerationLogger> ptr)
-    : archive_reader_(reader),
-      problem_data_(data),
+    std::shared_ptr<ProblemGenerationLog::ProblemGenerationLogger> ptr)
+    : archive_reader_(std::move(reader)),
+      problem_data_(std::move(data)),
       links_(vector),
-      logger_(ptr) {}
+      logger_(std::move(ptr)) {}

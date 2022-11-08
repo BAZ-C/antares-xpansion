@@ -25,6 +25,7 @@
 #include "MasterGeneration.h"
 #include "MasterProblemBuilder.h"
 #include "ProblemGenerationLogger.h"
+#include "ProblemVariablesZipAdapter.h"
 #include "solver_utils.h"
 
 namespace po = boost::program_options;
@@ -113,8 +114,8 @@ int main(int argc, char **argv) {
     LinkProblemsGenerator linkProblemsGenerator(links, solver_name, logger);
     auto mpsList = linkProblemsGenerator.readMPSList(mps_file_name);
 
-    ArchiveProblemWriter problem_writer(root, writer);
-    linkProblemsGenerator.treatloop(root, couplings, mpsList, &problem_writer,
+    auto problem_writer = std::make_shared<ArchiveProblemWriter>(root, writer);
+    linkProblemsGenerator.treatloop(root, couplings, mpsList, problem_writer,
                                     reader);
 
     std::filesystem::remove(archivePath);

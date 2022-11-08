@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <execution>
 
-#include "ArchiveProblemWriter.h"
 #include "IProblemProviderPort.h"
+#include "IProblemVariablesProviderPort.h"
 #include "IProblemWriter.h"
 #include "MyAdapter.h"
 #include "ProblemVariablesZipAdapter.h"
@@ -58,7 +58,9 @@ std::vector<ProblemData> LinkProblemsGenerator::readMPSList(
 void LinkProblemsGenerator::treat(
     const std::filesystem::path &root, ProblemData const &problemData,
     Couplings &couplings, std::shared_ptr<ArchiveReader> reader,
-    IProblemWriter *writer, IProblemProviderPort *problem_provider) const {
+    std::shared_ptr<IProblemWriter> writer,
+    std::shared_ptr<IProblemProviderPort> problem_provider,
+    std::shared_ptr<IProblemVariablesProviderPort> variable_provider) const {
   MyAdapter adapter(root, problemData);
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
@@ -68,11 +70,7 @@ void LinkProblemsGenerator::treat(
   std::shared_ptr<Problem> in_prblm =
       problem_provider->provide_problem(_solver_name);
 
-  auto problem_variables_from_zip_adapter =
-      std::make_shared<ProblemVariablesZipAdapter>(reader, problemData, _links,
-                                                   logger_);
-  ProblemVariables problem_variables =
-      problem_variables_from_zip_adapter->Provide();
+  ProblemVariables problem_variables = variable_provider->Provide();
 
   solver_rename_vars(in_prblm, problem_variables.variable_names);
 
@@ -106,11 +104,15 @@ void LinkProblemsGenerator::treat(
 void LinkProblemsGenerator::treatloop(const std::filesystem::path &root,
                                       Couplings &couplings,
                                       const std::vector<ProblemData> &mps_list,
-                                      IProblemWriter *writer,
+                                      std::shared_ptr<IProblemWriter> writer,
                                       std::shared_ptr<ArchiveReader> reader) {
   std::for_each(std::execution::par, mps_list.begin(), mps_list.end(),
                 [&](const auto &mps) {
-                  MyAdapter adapter(root, mps);
-                  treat(root, mps, couplings, reader, writer, &adapter);
+                  auto adapter = std::make_shared<MyAdapter>(root, mps);
+                  auto problem_variables_from_zip_adapter =
+                      std::make_shared<ProblemVariablesZipAdapter>(
+                          reader, mps, _links, logger_);
+                  treat(root, mps, couplings, reader, writer, adapter,
+                        problem_variables_from_zip_adapter);
                 });
 }

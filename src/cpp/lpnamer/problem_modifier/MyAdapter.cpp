@@ -5,8 +5,6 @@
 #include "MyAdapter.h"
 
 #include <algorithm>
-#include <cassert>
-#include <execution>
 #include <utility>
 
 #include "LinkProblemsGenerator.h"
