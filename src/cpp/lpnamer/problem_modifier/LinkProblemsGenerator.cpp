@@ -6,6 +6,8 @@
 #include "IProblemProviderPort.h"
 #include "IProblemVariablesProviderPort.h"
 #include "IProblemWriter.h"
+#include "MPSFileProblemProviderAdapter.h"
+#include "ProblemVariablesFileAdapter.h"
 #include "ProblemVariablesZipAdapter.h"
 #include "ZipProblemProviderAdapter.h"
 #include "helpers/StringUtils.h"
@@ -109,4 +111,21 @@ void LinkProblemsGenerator::treatloop(const std::filesystem::path &root,
                   treat(mps._problem_mps, couplings, writer, adapter,
                         problem_variables_from_zip_adapter);
                 });
+}
+
+void LinkProblemsGenerator::treatloop_files(
+    const std::filesystem::path &root, Couplings &couplings,
+    const std::vector<ProblemData> &mps_list,
+    std::shared_ptr<IProblemWriter> writer,
+    std::shared_ptr<ArchiveReader> reader) {
+  std::for_each(
+      std::execution::par, mps_list.begin(), mps_list.end(),
+      [&](const auto &mps) {
+        auto adapter = std::make_shared<MPSFileProblemProviderAdapter>(
+            root, mps._problem_mps);
+        auto problem_variables_from_zip_adapter =
+            std::make_shared<ProblemVariablesFileAdapter>(mps, _links, logger_);
+        treat(mps._problem_mps, couplings, writer, adapter,
+              problem_variables_from_zip_adapter);
+      });
 }

@@ -61,6 +61,10 @@ class LinkProblemsGenerator {
   std::filesystem::path lpDir_ = "";
   ProblemGenerationLog::ProblemGenerationLoggerSharedPointer logger_;
   mutable std::mutex coupling_mutex_;
-  void Write_problem(const ProblemData& problemData, ArchiveWriter& writer,
-                     std::shared_ptr<Problem>& in_prblm);
+
+ public:
+  void treatloop_files(const std::filesystem::path& root, Couplings& couplings,
+                       const std::vector<ProblemData>& mps_list,
+                       std::shared_ptr<IProblemWriter> writer,
+                       std::shared_ptr<ArchiveReader> reader);
 };
