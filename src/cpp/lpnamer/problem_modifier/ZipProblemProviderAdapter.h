@@ -6,10 +6,11 @@
 
 #include "IProblemProviderPort.h"
 #include "LinkProblemsGenerator.h"
-class MyAdapter : public IProblemProviderPort {
+class ZipProblemProviderAdapter : public IProblemProviderPort {
  public:
-  explicit MyAdapter(std::filesystem::path lp_dir, const std::string& data,
-                     std::shared_ptr<ArchiveReader> ptr);
+  explicit ZipProblemProviderAdapter(std::filesystem::path lp_dir,
+                                     const std::string& data,
+                                     std::shared_ptr<ArchiveReader> ptr);
   void reader_extract_file(const std::string& problem_name,
                            ArchiveReader& reader,
                            std::filesystem::path lpDir) const;
