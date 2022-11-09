@@ -673,7 +673,7 @@ std::string BendersBase::status_from_criterion() const {
  */
 std::filesystem::path BendersBase::GetSubproblemPath(
     std::string const &slave_name) const {
-  return std::filesystem::path(_options.INPUTROOT) / (slave_name + MPS_SUFFIX);
+  return std::filesystem::path(_options.INPUTROOT) / (slave_name);
 }
 
 /*!
@@ -699,8 +699,7 @@ double BendersBase::SubproblemWeight(int subproblem_count,
  *  \brief Get path to master problem mps file from options
  */
 std::filesystem::path BendersBase::get_master_path() const {
-  return std::filesystem::path(_options.INPUTROOT) /
-         (_options.MASTER_NAME + MPS_SUFFIX);
+  return std::filesystem::path(_options.INPUTROOT) / (_options.MASTER_NAME);
 }
 
 /*!
