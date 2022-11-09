@@ -115,8 +115,12 @@ int main(int argc, char **argv) {
     auto mpsList = linkProblemsGenerator.readMPSList(mps_file_name);
 
     auto problem_writer = std::make_shared<ArchiveProblemWriter>(root, writer);
-    linkProblemsGenerator.treatloop(root, couplings, mpsList, problem_writer,
-                                    reader);
+    bool use_zip_implementation = true;
+    if (use_zip_implementation) {
+      linkProblemsGenerator.treatloop(root, couplings, mpsList, problem_writer,
+                                      reader);
+    } else {
+    }
 
     std::filesystem::remove(archivePath);
     std::filesystem::rename(tmpArchivePath, lpDir_ / (MPS_ZIP_FILE + ZIP_EXT));
