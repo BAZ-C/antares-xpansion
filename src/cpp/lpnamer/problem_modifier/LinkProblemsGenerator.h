@@ -52,8 +52,7 @@ class LinkProblemsGenerator {
 
  private:
   void treat(
-      const std::filesystem::path& root, ProblemData const& problemData,
-      Couplings& couplings, std::shared_ptr<ArchiveReader> reader,
+      const std::string& problem_name, Couplings& couplings,
       std::shared_ptr<IProblemWriter> writer,
       std::shared_ptr<IProblemProviderPort> problem_provider,
       std::shared_ptr<IProblemVariablesProviderPort> variable_provider) const;

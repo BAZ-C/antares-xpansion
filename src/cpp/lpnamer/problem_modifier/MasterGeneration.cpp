@@ -9,8 +9,9 @@
 
 MasterGeneration::MasterGeneration(
     const std::filesystem::path &rootPath, const std::vector<ActiveLink> &links,
-    const AdditionalConstraints &additionalConstraints_p, Couplings &couplings,
-    std::string const &master_formulation, std::string const &solver_name,
+    const AdditionalConstraints &additionalConstraints_p,
+    const Couplings &couplings, std::string const &master_formulation,
+    std::string const &solver_name,
     ProblemGenerationLog::ProblemGenerationLoggerSharedPointer logger)
     : logger_(logger) {
   add_candidates(links);
