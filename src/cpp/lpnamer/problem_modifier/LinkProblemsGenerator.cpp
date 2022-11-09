@@ -61,11 +61,9 @@ void LinkProblemsGenerator::treat(
     std::shared_ptr<IProblemWriter> writer,
     std::shared_ptr<IProblemProviderPort> problem_provider,
     std::shared_ptr<IProblemVariablesProviderPort> variable_provider) const {
-  MyAdapter adapter(root, problemData);
+  MyAdapter adapter(root, problemData, reader);
   // get path of file problem***.mps, variable***.txt and constraints***.txt
   auto const mps_name = root / problemData._problem_mps;
-
-  adapter.reader_extract_file(problemData, *reader, root);
 
   std::shared_ptr<Problem> in_prblm =
       problem_provider->provide_problem(_solver_name);
@@ -108,7 +106,7 @@ void LinkProblemsGenerator::treatloop(const std::filesystem::path &root,
                                       std::shared_ptr<ArchiveReader> reader) {
   std::for_each(std::execution::par, mps_list.begin(), mps_list.end(),
                 [&](const auto &mps) {
-                  auto adapter = std::make_shared<MyAdapter>(root, mps);
+                  auto adapter = std::make_shared<MyAdapter>(root, mps, reader);
                   auto problem_variables_from_zip_adapter =
                       std::make_shared<ProblemVariablesZipAdapter>(
                           reader, mps, _links, logger_);
