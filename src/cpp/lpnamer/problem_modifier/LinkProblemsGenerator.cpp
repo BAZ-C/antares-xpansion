@@ -116,16 +116,16 @@ void LinkProblemsGenerator::treatloop(const std::filesystem::path &root,
 void LinkProblemsGenerator::treatloop_files(
     const std::filesystem::path &root, Couplings &couplings,
     const std::vector<ProblemData> &mps_list,
-    std::shared_ptr<IProblemWriter> writer,
-    std::shared_ptr<ArchiveReader> reader) {
-  std::for_each(
-      std::execution::par, mps_list.begin(), mps_list.end(),
-      [&](const auto &mps) {
-        auto adapter = std::make_shared<MPSFileProblemProviderAdapter>(
-            root, mps._problem_mps);
-        auto problem_variables_from_zip_adapter =
-            std::make_shared<ProblemVariablesFileAdapter>(mps, _links, logger_);
-        treat(mps._problem_mps, couplings, writer, adapter,
-              problem_variables_from_zip_adapter);
-      });
+    std::shared_ptr<IProblemWriter> writer) {
+  std::for_each(std::execution::par, mps_list.begin(), mps_list.end(),
+                [&](const auto &mps) {
+                  auto adapter =
+                      std::make_shared<MPSFileProblemProviderAdapter>(
+                          root, mps._problem_mps);
+                  auto variables_file_adapter =
+                      std::make_shared<ProblemVariablesFileAdapter>(
+                          mps, _links, logger_, root);
+                  treat(mps._problem_mps, couplings, writer, adapter,
+                        variables_file_adapter);
+                });
 }

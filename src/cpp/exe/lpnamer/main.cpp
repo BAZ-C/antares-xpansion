@@ -138,14 +138,11 @@ int main(int argc, char **argv) {
       writer->Close();
       writer->Delete();
     } else {
-      /* Instantiate Zip reader */
-      auto reader = std::make_shared<ArchiveReader>(archivePath);
-      reader->Open();
-
       /*Instantiate zip writer */
       auto lpDir_ = root / "lp";
       const auto tmpArchiveName = MPS_ZIP_FILE + "-tmp" + ZIP_EXT;
       const auto tmpArchivePath = lpDir_ / tmpArchiveName;
+      std::filesystem::remove(tmpArchivePath);
       auto writer = std::make_shared<ArchiveWriter>(tmpArchivePath);
       writer->Open();
 
@@ -155,11 +152,7 @@ int main(int argc, char **argv) {
 
       /* Main stuff */
       linkProblemsGenerator.treatloop_files(root, couplings, mpsList,
-                                            problem_writer, reader);
-
-      /* Clean up */
-      reader->Close();
-      reader->Delete();
+                                            problem_writer);
 
       std::filesystem::remove(archivePath);
       std::filesystem::rename(tmpArchivePath,
