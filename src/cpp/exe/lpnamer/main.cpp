@@ -9,6 +9,7 @@
  *
  */
 
+#include <boost/archive/text_iarchive.hpp>
 #include <boost/program_options.hpp>
 #include <fstream>
 #include <iostream>
@@ -22,6 +23,7 @@
 #include "LauncherHelpers.h"
 #include "LinkProblemsGenerator.h"
 #include "LinkProfileReader.h"
+#include "LpsFromAntares.h"
 #include "MasterGeneration.h"
 #include "MasterProblemBuilder.h"
 #include "ProblemGenerationLogger.h"
@@ -107,7 +109,8 @@ int main(int argc, char **argv) {
     LinkProblemsGenerator linkProblemsGenerator(links, solver_name, logger);
     auto mpsList = linkProblemsGenerator.readMPSList(mps_file_name);
 
-    bool use_zip_implementation = false;
+    bool use_zip_implementation = true;
+    bool use_file_implementation = false;
     if (use_zip_implementation) {
       /* Instantiate Zip reader */
       auto reader = std::make_shared<ArchiveReader>(archivePath);
@@ -137,7 +140,7 @@ int main(int argc, char **argv) {
                               lpDir_ / (MPS_ZIP_FILE + ZIP_EXT));
       writer->Close();
       writer->Delete();
-    } else {
+    } else if (use_file_implementation) {
       /*Instantiate zip writer */
       auto lpDir_ = root / "lp";
       const auto tmpArchiveName = MPS_ZIP_FILE + "-tmp" + ZIP_EXT;
@@ -159,6 +162,14 @@ int main(int argc, char **argv) {
                               lpDir_ / (MPS_ZIP_FILE + ZIP_EXT));
       writer->Close();
       writer->Delete();
+    } else {
+      std::ifstream ifs("fichierDeSerialisation");
+      boost::archive::text_iarchive ia(ifs);
+
+      LpsFromAntares lps;
+      ia >> lps;
+      std::cout << "plop";
+      throw std::runtime_error("Enb");
     }
 
     MasterGeneration master_generation(root, links, additionalConstraints,

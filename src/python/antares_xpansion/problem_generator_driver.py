@@ -173,7 +173,7 @@ class ProblemGeneratorDriver:
         """
 
         start_time = datetime.now()
-        use_zip = False
+        use_zip = True
         if not use_zip:
             flushed_print(f"Output pat {self.output_path}")
             with zipfile.ZipFile(self.output_path, 'r') as study_archive:
