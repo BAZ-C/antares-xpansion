@@ -180,6 +180,7 @@ class ProblemGeneratorDriver:
                 study_archive.extractall(self.xpansion_output_dir)
             os.remove(self.output_path)
         flushed_print(f"LPNamer command {self._get_lp_namer_command()}")
+        raise Exception
         returned_l = subprocess.run(self._get_lp_namer_command(), shell=False,
                                     stdout=sys.stdout, stderr=sys.stderr)
 
