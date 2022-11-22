@@ -72,10 +72,10 @@ class LpsFromAntares {
   template <class Archive>
   void serialize(Archive& ar, [[maybe_unused]] const unsigned int version) {
     ar& _constant;
-    ar& _hedbo;
+    ar& _hebdo;
   }
 
  public:
   WeekConstantDataFromAntares _constant;
-  YearWeekNumHebdoDataFromAntares _hedbo;
+  YearWeekNumHebdoDataFromAntares _hebdo;
 };
