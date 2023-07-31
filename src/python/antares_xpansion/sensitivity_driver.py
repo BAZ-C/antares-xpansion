@@ -2,12 +2,9 @@
     Class to control the sensitivity analysis
 """
 
-import glob
 import os
-import shutil
 import subprocess
 import sys
-import zipfile
 from pathlib import Path
 
 from antares_xpansion.logger import step_logger

@@ -2,7 +2,6 @@
     Class to work on config
 """
 
-import glob
 import json
 import os
 import re
