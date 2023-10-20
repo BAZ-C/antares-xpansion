@@ -188,13 +188,12 @@ jobs:
         run: |
           cmake --build _build --config Release -j2 --target install
 
-      - name: Running unit tests
-        shell: cmd
+      - name: Running unit test examples/SmallTestSixCandidatesWithPlaylist
+        shell: bash
         run: |
           set PATH=%PATH%;C:\Program Files\Microsoft MPI\Bin\
           set PATH=%PATH%;${{ env.XPRESS }}
-          cd _build
-          ctest -C Release --output-on-failure -L "medium|unit|benders|lpnamer"
+          python src/python/launch.py -i examples/SmallTestSixCandidatesWithPlaylist -n 4
 
       - name: Create installer .zip
         shell: bash
