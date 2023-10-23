@@ -193,7 +193,7 @@ jobs:
         run: |
           set PATH=%PATH%;C:\Program Files\Microsoft MPI\Bin\
           set PATH=%PATH%;${{ env.XPRESS }}
-          python src/python/launch.py -i examples/SmallTestSixCandidatesWithPlaylist -n 4
+          "/c/hostedtoolcache/windows/Python/3.12.0/x64/python3.exe" src/python/launch.py -i examples/SmallTestSixCandidatesWithPlaylist -n 4
 
       - name: Create installer .zip
         shell: bash
