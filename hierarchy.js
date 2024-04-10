@@ -60,6 +60,7 @@ var hierarchy =
     [ "CurrentIterationData", "structCurrentIterationData.html", null ],
     [ "Catch::Decomposer", "structCatch_1_1Decomposer.html", null ],
     [ "DirectAccessScenarioToChronicleProvider", "classDirectAccessScenarioToChronicleProvider.html", null ],
+    [ "DynamicLibrary", "classDynamicLibrary.html", null ],
     [ "Catch::Detail::EnumInfo", "structCatch_1_1Detail_1_1EnumInfo.html", null ],
     [ "Exception", null, [
       [ "antares_xpansion.antares_driver.AntaresDriver.AntaresExecutionError", "classantares__xpansion_1_1antares__driver_1_1AntaresDriver_1_1AntaresExecutionError.html", null ],
@@ -96,6 +97,7 @@ var hierarchy =
       [ "antares_xpansion.input_checker.CandidateNameDuplicatedError", "classantares__xpansion_1_1input__checker_1_1CandidateNameDuplicatedError.html", null ],
       [ "antares_xpansion.input_checker.EmptyCandidateLink", "classantares__xpansion_1_1input__checker_1_1EmptyCandidateLink.html", null ],
       [ "antares_xpansion.input_checker.EmptyCandidateName", "classantares__xpansion_1_1input__checker_1_1EmptyCandidateName.html", null ],
+      [ "antares_xpansion.input_checker.ExpertLogsValueError", "classantares__xpansion_1_1input__checker_1_1ExpertLogsValueError.html", null ],
       [ "antares_xpansion.input_checker.GapValueError", "classantares__xpansion_1_1input__checker_1_1GapValueError.html", null ],
       [ "antares_xpansion.input_checker.IllegalCharsInCandidateName", "classantares__xpansion_1_1input__checker_1_1IllegalCharsInCandidateName.html", null ],
       [ "antares_xpansion.input_checker.LogLevelValueError", "classantares__xpansion_1_1input__checker_1_1LogLevelValueError.html", null ],
@@ -159,6 +161,7 @@ var hierarchy =
     ] ],
     [ "Catch::ExceptionTranslatorRegistrar", "classCatch_1_1ExceptionTranslatorRegistrar.html", null ],
     [ "Catch::ExprLhs< LhsT >", "classCatch_1_1ExprLhs.html", null ],
+    [ "ExternalLoopOptions", "structExternalLoopOptions.html", null ],
     [ "std::false_type", null, [
       [ "Catch::always_false< T >", "structCatch_1_1always__false.html", null ]
     ] ],
@@ -196,19 +199,46 @@ var hierarchy =
     ] ],
     [ "Catch::Generators::GeneratorWrapper< T >", "classCatch_1_1Generators_1_1GeneratorWrapper.html", null ],
     [ "Catch::Generators::GeneratorWrapper< U >", "classCatch_1_1Generators_1_1GeneratorWrapper.html", null ],
+    [ "HeadersManager", "structHeadersManager.html", [
+      [ "HeadersManagerExternalLoop", "structHeadersManagerExternalLoop.html", null ]
+    ] ],
     [ "HebdoDataFromAntares", "classHebdoDataFromAntares.html", null ],
     [ "Catch::IContext", "structCatch_1_1IContext.html", [
       [ "Catch::IMutableContext", "structCatch_1_1IMutableContext.html", null ]
     ] ],
+    [ "ICutsManager", "classICutsManager.html", [
+      [ "CutsManagerRunTime", "classCutsManagerRunTime.html", null ]
+    ] ],
     [ "Catch::IExceptionTranslator", "structCatch_1_1IExceptionTranslator.html", null ],
     [ "Catch::IExceptionTranslatorRegistry", "structCatch_1_1IExceptionTranslatorRegistry.html", null ],
     [ "Catch::IGeneratorTracker", "structCatch_1_1IGeneratorTracker.html", null ],
-    [ "ILogger", "classILogger.html", [
-      [ "LoggerNOOPStub", "classLoggerNOOPStub.html", null ],
-      [ "SimpleLoggerMock", "classSimpleLoggerMock.html", null ],
-      [ "xpansion::logger::Master", "classxpansion_1_1logger_1_1Master.html", null ],
-      [ "xpansion::logger::User", "classxpansion_1_1logger_1_1User.html", null ],
-      [ "xpansion::logger::UserFile", "classxpansion_1_1logger_1_1UserFile.html", null ]
+    [ "ILoggerBenders", "structILoggerBenders.html", [
+      [ "BendersLoggerBase", "structBendersLoggerBase.html", null ],
+      [ "ILogger", "classILogger.html", [
+        [ "LoggerNOOPStub", "classLoggerNOOPStub.html", null ],
+        [ "SimpleLoggerMock", "classSimpleLoggerMock.html", null ],
+        [ "xpansion::logger::Master", "classxpansion_1_1logger_1_1Master.html", null ],
+        [ "xpansion::logger::User", "classxpansion_1_1logger_1_1User.html", null ],
+        [ "xpansion::logger::UserFile", "classxpansion_1_1logger_1_1UserFile.html", null ]
+      ] ],
+      [ "MathLoggerBehaviour", "structMathLoggerBehaviour.html", [
+        [ "MathLogger", "structMathLogger.html", [
+          [ "MathLoggerBase", "structMathLoggerBase.html", [
+            [ "MathLoggerBaseExternalLoop", "structMathLoggerBaseExternalLoop.html", null ]
+          ] ],
+          [ "MathLoggerBendersByBatch", "structMathLoggerBendersByBatch.html", [
+            [ "MathLoggerBendersByBatchExternalLoop", "structMathLoggerBendersByBatchExternalLoop.html", null ]
+          ] ]
+        ] ],
+        [ "MathLoggerImplementation", "classMathLoggerImplementation.html", [
+          [ "MathLoggerFile", "classMathLoggerFile.html", null ],
+          [ "MathLoggerOstream", "classMathLoggerOstream.html", null ]
+        ] ]
+      ] ],
+      [ "MathLoggerDriver", "classMathLoggerDriver.html", null ]
+    ] ],
+    [ "IMasterUpdate", "classIMasterUpdate.html", [
+      [ "MasterUpdateBase", "classMasterUpdateBase.html", null ]
     ] ],
     [ "Catch::IMutableEnumValuesRegistry", "structCatch_1_1IMutableEnumValuesRegistry.html", null ],
     [ "Catch::IMutableRegistryHub", "structCatch_1_1IMutableRegistryHub.html", null ],
@@ -224,7 +254,11 @@ var hierarchy =
         [ "LinkProfile::InvalidHourForProfile", "classLinkProfile_1_1InvalidHourForProfile.html", null ]
       ] ]
     ] ],
+    [ "IOuterLoopCriterion", "classIOuterLoopCriterion.html", [
+      [ "OuterloopCriterionLossOfLoad", "classOuterloopCriterionLossOfLoad.html", null ]
+    ] ],
     [ "IProblemProviderPort", "classIProblemProviderPort.html", [
+      [ "FileProblemProviderAdapter", "classFileProblemProviderAdapter.html", null ],
       [ "MPSFileProblemProviderAdapter", "classMPSFileProblemProviderAdapter.html", null ],
       [ "ZipProblemProviderAdapter", "classZipProblemProviderAdapter.html", null ]
     ] ],
@@ -259,6 +293,7 @@ var hierarchy =
     ] ],
     [ "IWriterLogger", "classIWriterLogger.html", null ],
     [ "IXpansionProblemsProvider", "classIXpansionProblemsProvider.html", [
+      [ "FileProblemsProviderAdapter", "classFileProblemsProviderAdapter.html", null ],
       [ "XpansionProblemsFromAntaresProvider", "classXpansionProblemsFromAntaresProvider.html", null ],
       [ "ZipProblemsProviderAdapter", "classZipProblemsProviderAdapter.html", null ]
     ] ],
@@ -277,6 +312,7 @@ var hierarchy =
     [ "LinkProfile", "classLinkProfile.html", null ],
     [ "LinkProfileReader", "classLinkProfileReader.html", null ],
     [ "LogData", "structLogData.html", null ],
+    [ "LogDestination", "classLogDestination.html", null ],
     [ "antares_xpansion.log_utils.LogUtils", "classantares__xpansion_1_1log__utils_1_1LogUtils.html", null ],
     [ "LpFilesExtractor", "classLpFilesExtractor.html", null ],
     [ "LpsFromAntares", "classLpsFromAntares.html", null ],
@@ -331,6 +367,7 @@ var hierarchy =
       [ "Catch::Matchers::Impl::MatcherBase< std::vector< T > >", "structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html", null ],
       [ "Catch::Matchers::Impl::MatcherBase< T >", "structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html", null ]
     ] ],
+    [ "MathLoggerFactory", "classMathLoggerFactory.html", null ],
     [ "MergeMPS", "classMergeMPS.html", null ],
     [ "Catch::MessageInfo", "structCatch_1_1MessageInfo.html", null ],
     [ "Catch::MessageStream", "structCatch_1_1MessageStream.html", [
@@ -353,6 +390,7 @@ var hierarchy =
       ] ],
       [ "StudyUpdaterExeOptions", "classStudyUpdaterExeOptions.html", null ]
     ] ],
+    [ "OuterLoop", "classOuterLoop.html", null ],
     [ "Output::OutputWriter", "classOutput_1_1OutputWriter.html", [
       [ "Output::JsonWriter", "classOutput_1_1JsonWriter.html", null ],
       [ "Output::VoidWriter", "classOutput_1_1VoidWriter.html", null ],
@@ -365,11 +403,17 @@ var hierarchy =
     [ "Predicate", "structPredicate.html", null ],
     [ "Output::ProblemData", "structOutput_1_1ProblemData.html", null ],
     [ "ProblemData", "structProblemData.html", null ],
+    [ "ProblemGeneration", "classProblemGeneration.html", [
+      [ "ProblemGenerationSpyAndMock", "classProblemGenerationSpyAndMock.html", null ]
+    ] ],
     [ "ProblemGenerationLog::ProblemGenerationILogger", "classProblemGenerationLog_1_1ProblemGenerationILogger.html", [
       [ "ProblemGenerationLog::ProblemGenerationFileLogger", "classProblemGenerationLog_1_1ProblemGenerationFileLogger.html", null ],
       [ "ProblemGenerationLog::ProblemGenerationOstreamLogger", "classProblemGenerationLog_1_1ProblemGenerationOstreamLogger.html", null ]
     ] ],
     [ "ProblemGenerationLog::ProblemGenerationLogger", "classProblemGenerationLog_1_1ProblemGenerationLogger.html", null ],
+    [ "ProblemGenerationOptions", "classProblemGenerationOptions.html", [
+      [ "ProblemGenerationExeOptions", "classProblemGenerationExeOptions.html", null ]
+    ] ],
     [ "antares_xpansion.problem_generator_driver.ProblemGeneratorData", "classantares__xpansion_1_1problem__generator__driver_1_1ProblemGeneratorData.html", null ],
     [ "antares_xpansion.problem_generator_driver.ProblemGeneratorDriver", "classantares__xpansion_1_1problem__generator__driver_1_1ProblemGeneratorDriver.html", null ],
     [ "ProblemHebdoId", "structProblemHebdoId.html", null ],
@@ -392,6 +436,8 @@ var hierarchy =
         [ "ActiveLinksBuilder::MultipleAlreadyInstalledProfileDetectedForLink", "classActiveLinksBuilder_1_1MultipleAlreadyInstalledProfileDetectedForLink.html", null ],
         [ "ActiveLinksBuilder::MultipleLinkIddetectedForLink", "classActiveLinksBuilder_1_1MultipleLinkIddetectedForLink.html", null ],
         [ "ActiveLinksBuilder::ThereIsNoLinkProfileAssociatedWithThisProfile", "classActiveLinksBuilder_1_1ThereIsNoLinkProfileAssociatedWithThisProfile.html", null ],
+        [ "CandidatesINIReader::InvalidIntercoFile", "classCandidatesINIReader_1_1InvalidIntercoFile.html", null ],
+        [ "CriterionCouldNotBeSatisfied", "classCriterionCouldNotBeSatisfied.html", null ],
         [ "InvalidBoundTypeException", "classInvalidBoundTypeException.html", null ],
         [ "InvalidColSizeException", "classInvalidColSizeException.html", null ],
         [ "InvalidColTypeException", "classInvalidColTypeException.html", null ],
@@ -405,6 +451,9 @@ var hierarchy =
         [ "LpFilesExtractor::ErrorWithIntercosFile", "classLpFilesExtractor_1_1ErrorWithIntercosFile.html", null ],
         [ "OptionsParser::InvalidNumberOfArgumentsPassedToParser", "classOptionsParser_1_1InvalidNumberOfArgumentsPassedToParser.html", null ],
         [ "OptionsParser::NullArgumentsValues", "classOptionsParser_1_1NullArgumentsValues.html", null ],
+        [ "ProblemGenerationOptions::ConflictingParameters", "classProblemGenerationOptions_1_1ConflictingParameters.html", null ],
+        [ "ProblemGenerationOptions::MismatchedParameters", "classProblemGenerationOptions_1_1MismatchedParameters.html", null ],
+        [ "ProblemGenerationOptions::MissingParameters", "classProblemGenerationOptions_1_1MissingParameters.html", null ],
         [ "ProblemModifier::CandidateWasNotAddedInProblem", "classProblemModifier_1_1CandidateWasNotAddedInProblem.html", null ],
         [ "StudyUpdateStrategy::NoInvestmentComputedForTheCandidate", "classStudyUpdateStrategy_1_1NoInvestmentComputedForTheCandidate.html", null ],
         [ "VariableFileReader::VariablesNotFound", "classVariableFileReader_1_1VariablesNotFound.html", null ],
@@ -418,7 +467,6 @@ var hierarchy =
       ] ],
       [ "ArchiveIOGeneralException", "classArchiveIOGeneralException.html", null ],
       [ "ArchiveIOSpecificException", "classArchiveIOSpecificException.html", null ],
-      [ "FullRunOptionsParser::FullRunOptionInvalidMethod", "classFullRunOptionsParser_1_1FullRunOptionInvalidMethod.html", null ],
       [ "GenericSolverException", "classGenericSolverException.html", null ],
       [ "IniFileNotFound", "classIniFileNotFound.html", null ],
       [ "NotImplementedFeatureSolverException", "classNotImplementedFeatureSolverException.html", null ]
@@ -457,6 +505,7 @@ var hierarchy =
     ] ],
     [ "SolverData", "structSolverData.html", null ],
     [ "SolverFactory", "classSolverFactory.html", null ],
+    [ "SolverLoader", "classSolverLoader.html", null ],
     [ "SolverLogManager", "classSolverLogManager.html", null ],
     [ "Catch::SourceLineInfo", "structCatch_1_1SourceLineInfo.html", null ],
     [ "antares_xpansion.split_link_profile.SplitLinkProfile", "classantares__xpansion_1_1split__link__profile_1_1SplitLinkProfile.html", null ],
@@ -493,6 +542,7 @@ var hierarchy =
     [ "Catch::StringMaker< wchar_t const * >", "structCatch_1_1StringMaker_3_01wchar__t_01const_01_5_01_4.html", null ],
     [ "Catch::StringRef", "classCatch_1_1StringRef.html", null ],
     [ "StringManip::StringUtils", "classStringManip_1_1StringUtils.html", null ],
+    [ "struct", "structstruct.html", null ],
     [ "antares_xpansion.study_locker.StudyLocker", "classantares__xpansion_1_1study__locker_1_1StudyLocker.html", null ],
     [ "antares_xpansion.study_output_cleaner.StudyOutputCleaner", "classantares__xpansion_1_1study__output__cleaner_1_1StudyOutputCleaner.html", null ],
     [ "StudyUpdater", "classStudyUpdater.html", null ],
@@ -501,8 +551,7 @@ var hierarchy =
       [ "StudyUpdateLinkCapacitiesStrategy", "classStudyUpdateLinkCapacitiesStrategy.html", null ],
       [ "StudyUpdateLinkParameterStrategy", "classStudyUpdateLinkParameterStrategy.html", null ]
     ] ],
-    [ "SubproblemCutDataHandler", "classSubproblemCutDataHandler.html", null ],
-    [ "SubProblemData", "structSubProblemData.html", null ],
+    [ "PlainData::SubProblemData", "structPlainData_1_1SubProblemData.html", null ],
     [ "T", null, [
       [ "LogUtils::XpansionError< T >", "classLogUtils_1_1XpansionError.html", null ]
     ] ],
@@ -521,7 +570,6 @@ var hierarchy =
       [ "ChronicleProviderTest", "classChronicleProviderTest.html", null ],
       [ "ChronicleTest", "classChronicleTest.html", null ],
       [ "FileLoggerTest", "classFileLoggerTest.html", null ],
-      [ "FullRunOptionsParserTest", "classFullRunOptionsParserTest.html", null ],
       [ "JsonWriterTest", "classJsonWriterTest.html", null ],
       [ "JsonXpansionReaderTest", "classJsonXpansionReaderTest.html", null ],
       [ "LastIterationReaderTest", "classLastIterationReaderTest.html", null ],
@@ -532,6 +580,7 @@ var hierarchy =
       [ "MasterLoggerTest", "classMasterLoggerTest.html", null ],
       [ "MpsTxtWriterTest", "classMpsTxtWriterTest.html", null ],
       [ "OptionsParserTest", "classOptionsParserTest.html", null ],
+      [ "OuterLoopCriterionTest", "classOuterLoopCriterionTest.html", null ],
       [ "ProblemGenerationExeOptionsTest", "classProblemGenerationExeOptionsTest.html", null ],
       [ "ProblemGenerationLoggerTest", "classProblemGenerationLoggerTest.html", null ],
       [ "ProblemModifierTest", "classProblemModifierTest.html", [
@@ -581,11 +630,16 @@ var hierarchy =
     [ "tests.python.test_study_output_cleaner.TestStudyOutputCleaner", "classtests_1_1python_1_1test__study__output__cleaner_1_1TestStudyOutputCleaner.html", null ],
     [ "tests.python.test_study_updater.TestStudyUpdater", "classtests_1_1python_1_1test__study__updater_1_1TestStudyUpdater.html", null ],
     [ "testing::TestWithParam", null, [
-      [ "FullRunOptionsParserTestParameterizedMethod", "classFullRunOptionsParserTestParameterizedMethod.html", null ],
+      [ "FullRunOptionsParserTest", "classFullRunOptionsParserTest.html", [
+        [ "FullRunOptionsParserTestFullPath", "classFullRunOptionsParserTestFullPath.html", null ]
+      ] ],
+      [ "FullRunOptionsParserTestParameterizedMethod_output", "classFullRunOptionsParserTestParameterizedMethod__output.html", null ],
+      [ "MasterUpdateBaseTest", "classMasterUpdateBaseTest.html", null ],
       [ "ProblemConstructionTest", "classProblemConstructionTest.html", null ]
     ] ],
     [ "Catch::Timer", "classCatch_1_1Timer.html", null ],
     [ "Timer", "classTimer.html", null ],
+    [ "to", "structto.html", null ],
     [ "Catch::Totals", "structCatch_1_1Totals.html", null ],
     [ "std::true_type", null, [
       [ "Catch::true_given< typename >", "structCatch_1_1true__given.html", null ]
@@ -595,6 +649,7 @@ var hierarchy =
     [ "VariableFileReader", "classVariableFileReader.html", null ],
     [ "VariableFileReadNameConfiguration", "structVariableFileReadNameConfiguration.html", null ],
     [ "VariableNameComposition", "structVariableNameComposition.html", null ],
+    [ "PlainData::Variables", "structPlainData_1_1Variables.html", null ],
     [ "Version", "structVersion.html", null ],
     [ "Catch::WaitForKeypress", "structCatch_1_1WaitForKeypress.html", null ],
     [ "Catch::WarnAbout", "structCatch_1_1WarnAbout.html", null ],
