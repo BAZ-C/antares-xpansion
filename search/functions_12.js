@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_5fstatus_5fcheck_0',['zero_status_check',['../classSolverAbstract.html#aff87b9285872f0012d0f2c183bbf395e',1,'SolverAbstract']]]
+  ['voidwriter_0',['VoidWriter',['../classOutput_1_1VoidWriter.html#a3aebfa9d16828185951c57390b00ca0a',1,'Output::VoidWriter']]]
 ];

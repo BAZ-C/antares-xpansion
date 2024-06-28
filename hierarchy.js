@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "act", "classact.html", null ],
     [ "ActiveLink", "classActiveLink.html", null ],
     [ "ActiveLinksBuilder", "classActiveLinksBuilder.html", null ],
     [ "AdditionalConstraintsReader", "structAdditionalConstraintsReader.html", null ],
@@ -56,6 +57,8 @@ var hierarchy =
     [ "antares_xpansion.config_loader.ConfigLoader", "classantares__xpansion_1_1config__loader_1_1ConfigLoader.html", null ],
     [ "antares_xpansion.xpansionConfig.ConfigParameters", "classantares__xpansion_1_1xpansionConfig_1_1ConfigParameters.html", null ],
     [ "ConstantDataFromAntares", "classConstantDataFromAntares.html", null ],
+    [ "YAML::convert< OuterLoopInputData >", "structYAML_1_1convert_3_01OuterLoopInputData_01_4.html", null ],
+    [ "YAML::convert< OuterLoopSingleInputData >", "structYAML_1_1convert_3_01OuterLoopSingleInputData_01_4.html", null ],
     [ "Catch::Counts", "structCatch_1_1Counts.html", null ],
     [ "CurrentIterationData", "structCurrentIterationData.html", null ],
     [ "Catch::Decomposer", "structCatch_1_1Decomposer.html", null ],
@@ -179,19 +182,13 @@ var hierarchy =
       [ "Catch::Generators::IGenerator< std::vector< T > >", "structCatch_1_1Generators_1_1IGenerator.html", [
         [ "Catch::Generators::ChunkGenerator< T >", "classCatch_1_1Generators_1_1ChunkGenerator.html", null ]
       ] ],
-      [ "Catch::Generators::IGenerator< Float >", "structCatch_1_1Generators_1_1IGenerator.html", [
-        [ "Catch::Generators::RandomFloatingGenerator< Float >", "classCatch_1_1Generators_1_1RandomFloatingGenerator.html", null ]
-      ] ],
-      [ "Catch::Generators::IGenerator< Integer >", "structCatch_1_1Generators_1_1IGenerator.html", [
-        [ "Catch::Generators::RandomIntegerGenerator< Integer >", "classCatch_1_1Generators_1_1RandomIntegerGenerator.html", null ]
-      ] ],
+      [ "Catch::Generators::IGenerator< Float >", "structCatch_1_1Generators_1_1IGenerator.html", null ],
+      [ "Catch::Generators::IGenerator< Integer >", "structCatch_1_1Generators_1_1IGenerator.html", null ],
       [ "Catch::Generators::IGenerator< T >", "structCatch_1_1Generators_1_1IGenerator.html", [
         [ "Catch::Generators::FilterGenerator< T, Predicate >", "classCatch_1_1Generators_1_1FilterGenerator.html", null ],
         [ "Catch::Generators::FixedValuesGenerator< T >", "classCatch_1_1Generators_1_1FixedValuesGenerator.html", null ],
         [ "Catch::Generators::Generators< T >", "classCatch_1_1Generators_1_1Generators.html", null ],
-        [ "Catch::Generators::IteratorGenerator< T >", "classCatch_1_1Generators_1_1IteratorGenerator.html", null ],
         [ "Catch::Generators::MapGenerator< T, U, Func >", "classCatch_1_1Generators_1_1MapGenerator.html", null ],
-        [ "Catch::Generators::RangeGenerator< T >", "classCatch_1_1Generators_1_1RangeGenerator.html", null ],
         [ "Catch::Generators::RepeatGenerator< T >", "classCatch_1_1Generators_1_1RepeatGenerator.html", null ],
         [ "Catch::Generators::SingleValueGenerator< T >", "classCatch_1_1Generators_1_1SingleValueGenerator.html", null ],
         [ "Catch::Generators::TakeGenerator< T >", "classCatch_1_1Generators_1_1TakeGenerator.html", null ]
@@ -206,14 +203,15 @@ var hierarchy =
     [ "Catch::IContext", "structCatch_1_1IContext.html", [
       [ "Catch::IMutableContext", "structCatch_1_1IMutableContext.html", null ]
     ] ],
-    [ "ICutsManager", "classICutsManager.html", [
-      [ "CutsManagerRunTime", "classCutsManagerRunTime.html", null ]
+    [ "Outerloop::ICutsManager", "classOuterloop_1_1ICutsManager.html", [
+      [ "Outerloop::CutsManagerRunTime", "classOuterloop_1_1CutsManagerRunTime.html", null ]
     ] ],
     [ "Catch::IExceptionTranslator", "structCatch_1_1IExceptionTranslator.html", null ],
     [ "Catch::IExceptionTranslatorRegistry", "structCatch_1_1IExceptionTranslatorRegistry.html", null ],
     [ "Catch::IGeneratorTracker", "structCatch_1_1IGeneratorTracker.html", null ],
-    [ "ILoggerBenders", "structILoggerBenders.html", [
+    [ "ILoggerXpansion", "structILoggerXpansion.html", [
       [ "BendersLoggerBase", "structBendersLoggerBase.html", null ],
+      [ "EmptyLogger", "structEmptyLogger.html", null ],
       [ "ILogger", "classILogger.html", [
         [ "LoggerNOOPStub", "classLoggerNOOPStub.html", null ],
         [ "SimpleLoggerMock", "classSimpleLoggerMock.html", null ],
@@ -235,13 +233,17 @@ var hierarchy =
           [ "MathLoggerOstream", "classMathLoggerOstream.html", null ]
         ] ]
       ] ],
-      [ "MathLoggerDriver", "classMathLoggerDriver.html", null ]
+      [ "MathLoggerDriver", "classMathLoggerDriver.html", null ],
+      [ "ProblemGenerationLog::ProblemGenerationILogger", "classProblemGenerationLog_1_1ProblemGenerationILogger.html", [
+        [ "ProblemGenerationLog::ProblemGenerationFileLogger", "classProblemGenerationLog_1_1ProblemGenerationFileLogger.html", null ],
+        [ "ProblemGenerationLog::ProblemGenerationOstreamLogger", "classProblemGenerationLog_1_1ProblemGenerationOstreamLogger.html", null ]
+      ] ],
+      [ "ProblemGenerationLog::ProblemGenerationLogger", "classProblemGenerationLog_1_1ProblemGenerationLogger.html", null ]
     ] ],
-    [ "IMasterUpdate", "classIMasterUpdate.html", [
-      [ "MasterUpdateBase", "classMasterUpdateBase.html", null ]
+    [ "Outerloop::IMasterUpdate", "classOuterloop_1_1IMasterUpdate.html", [
+      [ "Outerloop::MasterUpdateBase", "classOuterloop_1_1MasterUpdateBase.html", null ]
     ] ],
     [ "Catch::IMutableEnumValuesRegistry", "structCatch_1_1IMutableEnumValuesRegistry.html", null ],
-    [ "Catch::IMutableRegistryHub", "structCatch_1_1IMutableRegistryHub.html", null ],
     [ "antares_xpansion.general_data_reader.IniReader", "classantares__xpansion_1_1general__data__reader_1_1IniReader.html", null ],
     [ "INIReader", "classINIReader.html", null ],
     [ "IniReaderUtils", "classIniReaderUtils.html", null ],
@@ -254,8 +256,8 @@ var hierarchy =
         [ "LinkProfile::InvalidHourForProfile", "classLinkProfile_1_1InvalidHourForProfile.html", null ]
       ] ]
     ] ],
-    [ "IOuterLoopCriterion", "classIOuterLoopCriterion.html", [
-      [ "OuterloopCriterionLossOfLoad", "classOuterloopCriterionLossOfLoad.html", null ]
+    [ "Outerloop::IOuterLoopInputDataReader", "classOuterloop_1_1IOuterLoopInputDataReader.html", [
+      [ "Outerloop::OuterLoopInputFromYaml", "classOuterloop_1_1OuterLoopInputFromYaml.html", null ]
     ] ],
     [ "IProblemProviderPort", "classIProblemProviderPort.html", [
       [ "FileProblemProviderAdapter", "classFileProblemProviderAdapter.html", null ],
@@ -270,9 +272,7 @@ var hierarchy =
     [ "IProblemWriter", "classIProblemWriter.html", [
       [ "MPSFileWriter", "classMPSFileWriter.html", null ]
     ] ],
-    [ "Catch::IRegistryHub", "structCatch_1_1IRegistryHub.html", null ],
     [ "Catch::IResultCapture", "structCatch_1_1IResultCapture.html", null ],
-    [ "Catch::IRunner", "structCatch_1_1IRunner.html", null ],
     [ "Catch::is_callable< T >", "structCatch_1_1is__callable.html", null ],
     [ "Catch::is_callable_tester", "structCatch_1_1is__callable__tester.html", null ],
     [ "Catch::is_range< T >", "structCatch_1_1is__range.html", null ],
@@ -288,7 +288,6 @@ var hierarchy =
     ] ],
     [ "Catch::ITransientExpression", "structCatch_1_1ITransientExpression.html", [
       [ "Catch::BinaryExpr< LhsT, RhsT >", "classCatch_1_1BinaryExpr.html", null ],
-      [ "Catch::MatchExpr< ArgT, MatcherT >", "classCatch_1_1MatchExpr.html", null ],
       [ "Catch::UnaryExpr< LhsT >", "classCatch_1_1UnaryExpr.html", null ]
     ] ],
     [ "IWriterLogger", "classIWriterLogger.html", null ],
@@ -318,7 +317,7 @@ var hierarchy =
     [ "LpsFromAntares", "classLpsFromAntares.html", null ],
     [ "std::map", null, [
       [ "AdditionalConstraint", "classAdditionalConstraint.html", null ],
-      [ "AdditionalConstraints", "structAdditionalConstraints.html", null ]
+      [ "AdditionalConstraints", "classAdditionalConstraints.html", null ]
     ] ],
     [ "MasterGeneration", "classMasterGeneration.html", null ],
     [ "MasterProblemBuilder", "classMasterProblemBuilder.html", null ],
@@ -344,19 +343,13 @@ var hierarchy =
         [ "Catch::Matchers::Floating::WithinAbsMatcher", "structCatch_1_1Matchers_1_1Floating_1_1WithinAbsMatcher.html", null ],
         [ "Catch::Matchers::Floating::WithinRelMatcher", "structCatch_1_1Matchers_1_1Floating_1_1WithinRelMatcher.html", null ],
         [ "Catch::Matchers::Floating::WithinUlpsMatcher", "structCatch_1_1Matchers_1_1Floating_1_1WithinUlpsMatcher.html", null ],
-        [ "Catch::Matchers::Generic::PredicateMatcher< T >", "classCatch_1_1Matchers_1_1Generic_1_1PredicateMatcher.html", null ],
         [ "Catch::Matchers::StdString::RegexMatcher", "structCatch_1_1Matchers_1_1StdString_1_1RegexMatcher.html", null ],
         [ "Catch::Matchers::StdString::StringMatcherBase", "structCatch_1_1Matchers_1_1StdString_1_1StringMatcherBase.html", [
           [ "Catch::Matchers::StdString::ContainsMatcher", "structCatch_1_1Matchers_1_1StdString_1_1ContainsMatcher.html", null ],
           [ "Catch::Matchers::StdString::EndsWithMatcher", "structCatch_1_1Matchers_1_1StdString_1_1EndsWithMatcher.html", null ],
           [ "Catch::Matchers::StdString::EqualsMatcher", "structCatch_1_1Matchers_1_1StdString_1_1EqualsMatcher.html", null ],
           [ "Catch::Matchers::StdString::StartsWithMatcher", "structCatch_1_1Matchers_1_1StdString_1_1StartsWithMatcher.html", null ]
-        ] ],
-        [ "Catch::Matchers::Vector::ApproxMatcher< T >", "structCatch_1_1Matchers_1_1Vector_1_1ApproxMatcher.html", null ],
-        [ "Catch::Matchers::Vector::ContainsElementMatcher< T >", "structCatch_1_1Matchers_1_1Vector_1_1ContainsElementMatcher.html", null ],
-        [ "Catch::Matchers::Vector::ContainsMatcher< T >", "structCatch_1_1Matchers_1_1Vector_1_1ContainsMatcher.html", null ],
-        [ "Catch::Matchers::Vector::EqualsMatcher< T >", "structCatch_1_1Matchers_1_1Vector_1_1EqualsMatcher.html", null ],
-        [ "Catch::Matchers::Vector::UnorderedEqualsMatcher< T >", "structCatch_1_1Matchers_1_1Vector_1_1UnorderedEqualsMatcher.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "Catch::Matchers::Impl::MatcherUntypedBase", "classCatch_1_1Matchers_1_1Impl_1_1MatcherUntypedBase.html", [
@@ -376,13 +369,11 @@ var hierarchy =
     [ "Catch::NameAndTags", "structCatch_1_1NameAndTags.html", null ],
     [ "Catch::NonCopyable", "classCatch_1_1NonCopyable.html", [
       [ "Catch::AutoReg", "structCatch_1_1AutoReg.html", null ],
-      [ "Catch::IConfig", "structCatch_1_1IConfig.html", null ],
       [ "Catch::ReusableStringStream", "classCatch_1_1ReusableStringStream.html", null ],
       [ "Catch::Section", "classCatch_1_1Section.html", null ]
     ] ],
     [ "Catch::not_this_one", "structCatch_1_1not__this__one.html", null ],
     [ "antares_xpansion.optimisation_keys.OptimisationKeys", "classantares__xpansion_1_1optimisation__keys_1_1OptimisationKeys.html", null ],
-    [ "Catch::Option< T >", "classCatch_1_1Option.html", null ],
     [ "OptionsParser", "classOptionsParser.html", [
       [ "AntaresArchiveUpdaterExeOptions", "classAntaresArchiveUpdaterExeOptions.html", null ],
       [ "ProblemGenerationExeOptions", "classProblemGenerationExeOptions.html", [
@@ -390,7 +381,12 @@ var hierarchy =
       ] ],
       [ "StudyUpdaterExeOptions", "classStudyUpdaterExeOptions.html", null ]
     ] ],
-    [ "OuterLoop", "classOuterLoop.html", null ],
+    [ "Outerloop::OuterLoop", "classOuterloop_1_1OuterLoop.html", null ],
+    [ "OuterLoopBiLevel", "classOuterLoopBiLevel.html", null ],
+    [ "OuterLoopCurrentIterationData", "structOuterLoopCurrentIterationData.html", null ],
+    [ "Outerloop::OuterLoopInputData", "classOuterloop_1_1OuterLoopInputData.html", null ],
+    [ "Outerloop::OuterLoopPattern", "classOuterloop_1_1OuterLoopPattern.html", null ],
+    [ "Outerloop::OuterLoopSingleInputData", "classOuterloop_1_1OuterLoopSingleInputData.html", null ],
     [ "Output::OutputWriter", "classOutput_1_1OutputWriter.html", [
       [ "Output::JsonWriter", "classOutput_1_1JsonWriter.html", null ],
       [ "Output::VoidWriter", "classOutput_1_1VoidWriter.html", null ],
@@ -406,11 +402,6 @@ var hierarchy =
     [ "ProblemGeneration", "classProblemGeneration.html", [
       [ "ProblemGenerationSpyAndMock", "classProblemGenerationSpyAndMock.html", null ]
     ] ],
-    [ "ProblemGenerationLog::ProblemGenerationILogger", "classProblemGenerationLog_1_1ProblemGenerationILogger.html", [
-      [ "ProblemGenerationLog::ProblemGenerationFileLogger", "classProblemGenerationLog_1_1ProblemGenerationFileLogger.html", null ],
-      [ "ProblemGenerationLog::ProblemGenerationOstreamLogger", "classProblemGenerationLog_1_1ProblemGenerationOstreamLogger.html", null ]
-    ] ],
-    [ "ProblemGenerationLog::ProblemGenerationLogger", "classProblemGenerationLog_1_1ProblemGenerationLogger.html", null ],
     [ "ProblemGenerationOptions", "classProblemGenerationOptions.html", [
       [ "ProblemGenerationExeOptions", "classProblemGenerationExeOptions.html", null ]
     ] ],
@@ -428,7 +419,6 @@ var hierarchy =
     [ "Catch::ResultWas", "structCatch_1_1ResultWas.html", null ],
     [ "antares_xpansion.resume_study.ResumeStudy", "classantares__xpansion_1_1resume__study_1_1ResumeStudy.html", null ],
     [ "antares_xpansion.resume_study.ResumeStudyData", "classantares__xpansion_1_1resume__study_1_1ResumeStudyData.html", null ],
-    [ "Catch::RunTests", "structCatch_1_1RunTests.html", null ],
     [ "std::runtime_error", null, [
       [ "LogUtils::XpansionError< std::runtime_error >", "classLogUtils_1_1XpansionError.html", [
         [ "ActiveLinksBuilder::CandidateDuplicationDetected", "classActiveLinksBuilder_1_1CandidateDuplicationDetected.html", null ],
@@ -451,6 +441,12 @@ var hierarchy =
         [ "LpFilesExtractor::ErrorWithIntercosFile", "classLpFilesExtractor_1_1ErrorWithIntercosFile.html", null ],
         [ "OptionsParser::InvalidNumberOfArgumentsPassedToParser", "classOptionsParser_1_1InvalidNumberOfArgumentsPassedToParser.html", null ],
         [ "OptionsParser::NullArgumentsValues", "classOptionsParser_1_1NullArgumentsValues.html", null ],
+        [ "Outerloop::OuterLoopCouldNotReadAreaField", "classOuterloop_1_1OuterLoopCouldNotReadAreaField.html", null ],
+        [ "Outerloop::OuterLoopCouldNotReadCriterionField", "classOuterloop_1_1OuterLoopCouldNotReadCriterionField.html", null ],
+        [ "Outerloop::OuterLoopInputFileError", "classOuterloop_1_1OuterLoopInputFileError.html", null ],
+        [ "Outerloop::OuterLoopInputFileIsEmpty", "classOuterloop_1_1OuterLoopInputFileIsEmpty.html", null ],
+        [ "Outerloop::OuterLoopInputFileNoPatternFound", "classOuterloop_1_1OuterLoopInputFileNoPatternFound.html", null ],
+        [ "Outerloop::OuterLoopInputPatternsShouldBeArray", "classOuterloop_1_1OuterLoopInputPatternsShouldBeArray.html", null ],
         [ "ProblemGenerationOptions::ConflictingParameters", "classProblemGenerationOptions_1_1ConflictingParameters.html", null ],
         [ "ProblemGenerationOptions::MismatchedParameters", "classProblemGenerationOptions_1_1MismatchedParameters.html", null ],
         [ "ProblemGenerationOptions::MissingParameters", "classProblemGenerationOptions_1_1MissingParameters.html", null ],
@@ -491,7 +487,6 @@ var hierarchy =
     ] ],
     [ "SensitivityStudy", "classSensitivityStudy.html", null ],
     [ "SensitivityWriter", "classSensitivityWriter.html", null ],
-    [ "Catch::ShowDurations", "structCatch_1_1ShowDurations.html", null ],
     [ "Catch::SimplePcg32", "classCatch_1_1SimplePcg32.html", null ],
     [ "SimulationOptions", "classSimulationOptions.html", null ],
     [ "SinglePbData", "structSinglePbData.html", null ],
@@ -507,6 +502,7 @@ var hierarchy =
     [ "SolverFactory", "classSolverFactory.html", null ],
     [ "SolverLoader", "classSolverLoader.html", null ],
     [ "SolverLogManager", "classSolverLogManager.html", null ],
+    [ "antares_xpansion.benders_driver.SolversExe", "classantares__xpansion_1_1benders__driver_1_1SolversExe.html", null ],
     [ "Catch::SourceLineInfo", "structCatch_1_1SourceLineInfo.html", null ],
     [ "antares_xpansion.split_link_profile.SplitLinkProfile", "classantares__xpansion_1_1split__link__profile_1_1SplitLinkProfile.html", null ],
     [ "StandardLp", "classStandardLp.html", null ],
@@ -542,7 +538,6 @@ var hierarchy =
     [ "Catch::StringMaker< wchar_t const * >", "structCatch_1_1StringMaker_3_01wchar__t_01const_01_5_01_4.html", null ],
     [ "Catch::StringRef", "classCatch_1_1StringRef.html", null ],
     [ "StringManip::StringUtils", "classStringManip_1_1StringUtils.html", null ],
-    [ "struct", "structstruct.html", null ],
     [ "antares_xpansion.study_locker.StudyLocker", "classantares__xpansion_1_1study__locker_1_1StudyLocker.html", null ],
     [ "antares_xpansion.study_output_cleaner.StudyOutputCleaner", "classantares__xpansion_1_1study__output__cleaner_1_1StudyOutputCleaner.html", null ],
     [ "StudyUpdater", "classStudyUpdater.html", null ],
@@ -580,8 +575,8 @@ var hierarchy =
       [ "MasterLoggerTest", "classMasterLoggerTest.html", null ],
       [ "MpsTxtWriterTest", "classMpsTxtWriterTest.html", null ],
       [ "OptionsParserTest", "classOptionsParserTest.html", null ],
-      [ "OuterLoopCriterionTest", "classOuterLoopCriterionTest.html", null ],
-      [ "ProblemGenerationExeOptionsTest", "classProblemGenerationExeOptionsTest.html", null ],
+      [ "OuterLoopInputFromYamlTest", "classOuterLoopInputFromYamlTest.html", null ],
+      [ "OuterLoopPatternTest", "classOuterLoopPatternTest.html", null ],
       [ "ProblemGenerationLoggerTest", "classProblemGenerationLoggerTest.html", null ],
       [ "ProblemModifierTest", "classProblemModifierTest.html", [
         [ "ProblemModifierTestMultiChronicle", "classProblemModifierTestMultiChronicle.html", null ],
@@ -635,7 +630,8 @@ var hierarchy =
       ] ],
       [ "FullRunOptionsParserTestParameterizedMethod_output", "classFullRunOptionsParserTestParameterizedMethod__output.html", null ],
       [ "MasterUpdateBaseTest", "classMasterUpdateBaseTest.html", null ],
-      [ "ProblemConstructionTest", "classProblemConstructionTest.html", null ]
+      [ "ProblemConstructionTest", "classProblemConstructionTest.html", null ],
+      [ "ProblemGenerationExeOptionsTest", "classProblemGenerationExeOptionsTest.html", null ]
     ] ],
     [ "Catch::Timer", "classCatch_1_1Timer.html", null ],
     [ "Timer", "classTimer.html", null ],
@@ -644,30 +640,27 @@ var hierarchy =
     [ "std::true_type", null, [
       [ "Catch::true_given< typename >", "structCatch_1_1true__given.html", null ]
     ] ],
-    [ "Catch::UseColour", "structCatch_1_1UseColour.html", null ],
     [ "VariableFileLine", "structVariableFileLine.html", null ],
     [ "VariableFileReader", "classVariableFileReader.html", null ],
     [ "VariableFileReadNameConfiguration", "structVariableFileReadNameConfiguration.html", null ],
     [ "VariableNameComposition", "structVariableNameComposition.html", null ],
-    [ "PlainData::Variables", "structPlainData_1_1Variables.html", null ],
+    [ "Outerloop::VariablesGroup", "classOuterloop_1_1VariablesGroup.html", null ],
     [ "Version", "structVersion.html", null ],
-    [ "Catch::WaitForKeypress", "structCatch_1_1WaitForKeypress.html", null ],
-    [ "Catch::WarnAbout", "structCatch_1_1WarnAbout.html", null ],
     [ "WeightsFileReader", "classWeightsFileReader.html", null ],
     [ "Worker", "classWorker.html", [
       [ "SubproblemWorker", "classSubproblemWorker.html", null ],
-      [ "WorkerMaster", "classWorkerMaster.html", [
-        [ "FakeWorkerMaster", "classFakeWorkerMaster.html", null ]
-      ] ]
+      [ "WorkerMaster", "classWorkerMaster.html", null ]
     ] ],
     [ "WorkerMasterData", "classWorkerMasterData.html", null ],
     [ "antares_xpansion.xpansionConfig.XpansionConfig", "classantares__xpansion_1_1xpansionConfig_1_1XpansionConfig.html", null ],
     [ "antares_xpansion.driver.XpansionDriver", "classantares__xpansion_1_1driver_1_1XpansionDriver.html", null ],
     [ "antares_xpansion.xpansion_study_reader.XpansionStudyReader", "classantares__xpansion_1_1xpansion__study__reader_1_1XpansionStudyReader.html", null ],
+    [ "LoadXpress::XpressLoader", "classLoadXpress_1_1XpressLoader.html", null ],
     [ "YearlyWeightsWriter", "classYearlyWeightsWriter.html", null ],
     [ "antares_xpansion.yearly_weight_writer.YearlyWeightWriter", "classantares__xpansion_1_1yearly__weight__writer_1_1YearlyWeightWriter.html", null ],
     [ "Enum", null, [
-      [ "tests.end_to_end.examples.example_test.BendersMethod", "classtests_1_1end__to__end_1_1examples_1_1example__test_1_1BendersMethod.html", null ]
+      [ "tests.end_to_end.examples.example_test.BendersMethod", "classtests_1_1end__to__end_1_1examples_1_1example__test_1_1BendersMethod.html", null ],
+      [ "tests.end_to_end.lpnamer.test_lpnamerEndToEnd.OptionType", "classtests_1_1end__to__end_1_1lpnamer_1_1test__lpnamerEndToEnd_1_1OptionType.html", null ]
     ] ],
     [ "QWidget", null, [
       [ "antares-xpansion-ui.MainWidget", "classantares-xpansion-ui_1_1MainWidget.html", null ]
