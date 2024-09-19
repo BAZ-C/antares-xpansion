@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['year_0',['Using different profiles depending on the Monte-Carlo year',['../md_docs_2user-guide_2get-started_2candidate-definition.html#autotoc_md125',1,'']]],
-  ['yearly_20weights_20tt_1',['&lt;tt&gt;yearly-weights&lt;/tt&gt;',['../md_docs_2user-guide_2get-started_2settings-definition.html#autotoc_md181',1,'']]],
-  ['yearlyweightswriter_2',['YearlyWeightsWriter',['../classYearlyWeightsWriter.html',1,'']]],
-  ['yearlyweightwriter_3',['YearlyWeightWriter',['../classantares__xpansion_1_1yearly__weight__writer_1_1YearlyWeightWriter.html',1,'antares_xpansion::yearly_weight_writer']]],
-  ['your_20antares_20output_20directory_20tt_4',['&lt;tt&gt;--simulationName {last, your-antares-output-directory}&lt;/tt&gt;',['../md_docs_2user-guide_2get-started_2launching-optimization.html#autotoc_md140',1,'']]]
+  ['zero_5fstatus_5fcheck_0',['zero_status_check',['../classSolverAbstract.html#aff87b9285872f0012d0f2c183bbf395e',1,'SolverAbstract']]],
+  ['zipproblemprovideradapter_1',['ZipProblemProviderAdapter',['../classZipProblemProviderAdapter.html',1,'']]],
+  ['zipproblemsprovideradapter_2',['ZipProblemsProviderAdapter',['../classZipProblemsProviderAdapter.html',1,'']]]
 ];

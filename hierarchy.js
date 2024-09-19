@@ -28,7 +28,8 @@ var hierarchy =
     [ "BatchCollection", "classBatchCollection.html", null ],
     [ "BendersBase", "classBendersBase.html", [
       [ "BendersMpi", "classBendersMpi.html", [
-        [ "BendersByBatch", "classBendersByBatch.html", null ]
+        [ "BendersByBatch", "classBendersByBatch.html", null ],
+        [ "Outerloop::BendersMpiOuterLoop", "classOuterloop_1_1BendersMpiOuterLoop.html", null ]
       ] ],
       [ "BendersSequential", "classBendersSequential.html", [
         [ "BendersSequentialDouble", "classBendersSequentialDouble.html", null ]
@@ -56,14 +57,14 @@ var hierarchy =
     [ "antares_xpansion.config_file_parser.ConfigFileParser", "classantares__xpansion_1_1config__file__parser_1_1ConfigFileParser.html", null ],
     [ "antares_xpansion.config_loader.ConfigLoader", "classantares__xpansion_1_1config__loader_1_1ConfigLoader.html", null ],
     [ "antares_xpansion.xpansionConfig.ConfigParameters", "classantares__xpansion_1_1xpansionConfig_1_1ConfigParameters.html", null ],
-    [ "ConstantDataFromAntares", "classConstantDataFromAntares.html", null ],
     [ "YAML::convert< OuterLoopInputData >", "structYAML_1_1convert_3_01OuterLoopInputData_01_4.html", null ],
     [ "YAML::convert< OuterLoopSingleInputData >", "structYAML_1_1convert_3_01OuterLoopSingleInputData_01_4.html", null ],
     [ "Catch::Counts", "structCatch_1_1Counts.html", null ],
+    [ "Outerloop::CriterionComputation", "classOuterloop_1_1CriterionComputation.html", null ],
     [ "CurrentIterationData", "structCurrentIterationData.html", null ],
     [ "Catch::Decomposer", "structCatch_1_1Decomposer.html", null ],
     [ "DirectAccessScenarioToChronicleProvider", "classDirectAccessScenarioToChronicleProvider.html", null ],
-    [ "DynamicLibrary", "classDynamicLibrary.html", null ],
+    [ "Solver::DynamicLibrary", "classSolver_1_1DynamicLibrary.html", null ],
     [ "Catch::Detail::EnumInfo", "structCatch_1_1Detail_1_1EnumInfo.html", null ],
     [ "Exception", null, [
       [ "antares_xpansion.antares_driver.AntaresDriver.AntaresExecutionError", "classantares__xpansion_1_1antares__driver_1_1AntaresDriver_1_1AntaresExecutionError.html", null ],
@@ -199,7 +200,6 @@ var hierarchy =
     [ "HeadersManager", "structHeadersManager.html", [
       [ "HeadersManagerExternalLoop", "structHeadersManagerExternalLoop.html", null ]
     ] ],
-    [ "HebdoDataFromAntares", "classHebdoDataFromAntares.html", null ],
     [ "Catch::IContext", "structCatch_1_1IContext.html", [
       [ "Catch::IMutableContext", "structCatch_1_1IMutableContext.html", null ]
     ] ],
@@ -226,7 +226,8 @@ var hierarchy =
           ] ],
           [ "MathLoggerBendersByBatch", "structMathLoggerBendersByBatch.html", [
             [ "MathLoggerBendersByBatchExternalLoop", "structMathLoggerBendersByBatchExternalLoop.html", null ]
-          ] ]
+          ] ],
+          [ "MathLoggerExternalLoopSpecific< T >", "structMathLoggerExternalLoopSpecific.html", null ]
         ] ],
         [ "MathLoggerImplementation", "classMathLoggerImplementation.html", [
           [ "MathLoggerFile", "classMathLoggerFile.html", null ],
@@ -314,7 +315,6 @@ var hierarchy =
     [ "LogDestination", "classLogDestination.html", null ],
     [ "antares_xpansion.log_utils.LogUtils", "classantares__xpansion_1_1log__utils_1_1LogUtils.html", null ],
     [ "LpFilesExtractor", "classLpFilesExtractor.html", null ],
-    [ "LpsFromAntares", "classLpsFromAntares.html", null ],
     [ "std::map", null, [
       [ "AdditionalConstraint", "classAdditionalConstraint.html", null ],
       [ "AdditionalConstraints", "classAdditionalConstraints.html", null ]
@@ -381,8 +381,10 @@ var hierarchy =
       ] ],
       [ "StudyUpdaterExeOptions", "classStudyUpdaterExeOptions.html", null ]
     ] ],
-    [ "Outerloop::OuterLoop", "classOuterloop_1_1OuterLoop.html", null ],
-    [ "OuterLoopBiLevel", "classOuterLoopBiLevel.html", null ],
+    [ "Outerloop::OuterLoop", "classOuterloop_1_1OuterLoop.html", [
+      [ "Outerloop::OuterLoopBenders", "classOuterloop_1_1OuterLoopBenders.html", null ]
+    ] ],
+    [ "Outerloop::OuterLoopBiLevel", "classOuterloop_1_1OuterLoopBiLevel.html", null ],
     [ "OuterLoopCurrentIterationData", "structOuterLoopCurrentIterationData.html", null ],
     [ "Outerloop::OuterLoopInputData", "classOuterloop_1_1OuterLoopInputData.html", null ],
     [ "Outerloop::OuterLoopPattern", "classOuterloop_1_1OuterLoopPattern.html", null ],
@@ -407,7 +409,6 @@ var hierarchy =
     ] ],
     [ "antares_xpansion.problem_generator_driver.ProblemGeneratorData", "classantares__xpansion_1_1problem__generator__driver_1_1ProblemGeneratorData.html", null ],
     [ "antares_xpansion.problem_generator_driver.ProblemGeneratorDriver", "classantares__xpansion_1_1problem__generator__driver_1_1ProblemGeneratorDriver.html", null ],
-    [ "ProblemHebdoId", "structProblemHebdoId.html", null ],
     [ "ProblemModifier", "classProblemModifier.html", null ],
     [ "ProblemNameCase", "structProblemNameCase.html", null ],
     [ "ProblemVariables", "structProblemVariables.html", null ],
@@ -427,7 +428,6 @@ var hierarchy =
         [ "ActiveLinksBuilder::MultipleLinkIddetectedForLink", "classActiveLinksBuilder_1_1MultipleLinkIddetectedForLink.html", null ],
         [ "ActiveLinksBuilder::ThereIsNoLinkProfileAssociatedWithThisProfile", "classActiveLinksBuilder_1_1ThereIsNoLinkProfileAssociatedWithThisProfile.html", null ],
         [ "CandidatesINIReader::InvalidIntercoFile", "classCandidatesINIReader_1_1InvalidIntercoFile.html", null ],
-        [ "CriterionCouldNotBeSatisfied", "classCriterionCouldNotBeSatisfied.html", null ],
         [ "InvalidBoundTypeException", "classInvalidBoundTypeException.html", null ],
         [ "InvalidColSizeException", "classInvalidColSizeException.html", null ],
         [ "InvalidColTypeException", "classInvalidColTypeException.html", null ],
@@ -441,6 +441,7 @@ var hierarchy =
         [ "LpFilesExtractor::ErrorWithIntercosFile", "classLpFilesExtractor_1_1ErrorWithIntercosFile.html", null ],
         [ "OptionsParser::InvalidNumberOfArgumentsPassedToParser", "classOptionsParser_1_1InvalidNumberOfArgumentsPassedToParser.html", null ],
         [ "OptionsParser::NullArgumentsValues", "classOptionsParser_1_1NullArgumentsValues.html", null ],
+        [ "Outerloop::CriterionCouldNotBeSatisfied", "classOuterloop_1_1CriterionCouldNotBeSatisfied.html", null ],
         [ "Outerloop::OuterLoopCouldNotReadAreaField", "classOuterloop_1_1OuterLoopCouldNotReadAreaField.html", null ],
         [ "Outerloop::OuterLoopCouldNotReadCriterionField", "classOuterloop_1_1OuterLoopCouldNotReadCriterionField.html", null ],
         [ "Outerloop::OuterLoopInputFileError", "classOuterloop_1_1OuterLoopInputFileError.html", null ],
@@ -575,6 +576,7 @@ var hierarchy =
       [ "MasterLoggerTest", "classMasterLoggerTest.html", null ],
       [ "MpsTxtWriterTest", "classMpsTxtWriterTest.html", null ],
       [ "OptionsParserTest", "classOptionsParserTest.html", null ],
+      [ "OuterLoopBiLevelTest", "classOuterLoopBiLevelTest.html", null ],
       [ "OuterLoopInputFromYamlTest", "classOuterLoopInputFromYamlTest.html", null ],
       [ "OuterLoopPatternTest", "classOuterLoopPatternTest.html", null ],
       [ "ProblemGenerationLoggerTest", "classProblemGenerationLoggerTest.html", null ],
@@ -594,6 +596,7 @@ var hierarchy =
       [ "UpdateCapacitiesTest", "classUpdateCapacitiesTest.html", null ],
       [ "UserLoggerTest", "classUserLoggerTest.html", null ],
       [ "VariableFileReaderTest", "classVariableFileReaderTest.html", null ],
+      [ "VariablesGroupTest", "classVariablesGroupTest.html", null ],
       [ "WeightsFileReaderTest", "classWeightsFileReaderTest.html", null ]
     ] ],
     [ "tests.python.test_antares_driver.TestAntaresDriver", "classtests_1_1python_1_1test__antares__driver_1_1TestAntaresDriver.html", null ],
@@ -629,6 +632,7 @@ var hierarchy =
         [ "FullRunOptionsParserTestFullPath", "classFullRunOptionsParserTestFullPath.html", null ]
       ] ],
       [ "FullRunOptionsParserTestParameterizedMethod_output", "classFullRunOptionsParserTestParameterizedMethod__output.html", null ],
+      [ "GeneralDataIniReaderTests", "classGeneralDataIniReaderTests.html", null ],
       [ "MasterUpdateBaseTest", "classMasterUpdateBaseTest.html", null ],
       [ "ProblemConstructionTest", "classProblemConstructionTest.html", null ],
       [ "ProblemGenerationExeOptionsTest", "classProblemGenerationExeOptionsTest.html", null ]
