@@ -6,7 +6,6 @@ import zipfile
 from pathlib import Path
 
 import yaml
-from dataclasses import dataclass
 
 # File CONFIG_FILE_PATH
 # yaml file containing executable name

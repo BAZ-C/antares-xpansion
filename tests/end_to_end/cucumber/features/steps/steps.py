@@ -7,9 +7,9 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+
 import numpy as np
 from behave import *
-
 from utils_functions import get_mpi_command, get_conf, read_outputs, remove_outputs
 
 
