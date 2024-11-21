@@ -206,7 +206,7 @@ if (CMAKE_SYSTEM_NAME STREQUAL Linux)
     set(THREADS_PREFER_PTHREAD_FLAG ON)
 endif ()
 find_package(Threads REQUIRED)
-find_package(TBB REQUIRED COMPONENTS tbb)
+find_package(TBB COMPONENTS tbb) # required for ubuntu 22+
 
 find_package(ZLIB REQUIRED) #Required for CoinUtils
 

@@ -60,8 +60,11 @@ target_link_libraries(benders_core
         antaresXpansion::solvers
         ${JSONCPP_LIB}
         antaresXpansion::outer_loop_lib
-        TBB::tbb
 )
+
+if (TBB_FOUND)
+    target_link_libraries(benders_core PRIVATE tbb)
+endif ()
 
 install(DIRECTORY include/antares-xpansion
         DESTINATION "include"

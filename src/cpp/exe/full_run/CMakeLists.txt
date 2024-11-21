@@ -32,7 +32,10 @@ target_link_libraries(full_run
         ${PROJECT_NAME}::benders_sequential_core
         ${PROJECT_NAME}::xpansion_study_updater_lib
         antaresXpansion::helpers
-        TBB::tbb
 )
+
+if (TBB_FOUND)
+    target_link_libraries(full_run PRIVATE tbb)
+endif ()
 
 install(TARGETS full_run DESTINATION bin)
