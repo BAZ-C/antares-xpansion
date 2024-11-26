@@ -23,8 +23,9 @@ target_sources(benders_core PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/WorkerMaster.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/common.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/CriterionComputation.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/OuterLoopInputDataReader.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/CriterionInputDataReader.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/VariablesGroup.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/CouplingMapGenerator.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/BendersBase.h
         ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/BendersMathLogger.h
         ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/BendersStructsDatas.h
@@ -41,12 +42,12 @@ target_sources(benders_core PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/WorkerMaster.h
         ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/common.h
         ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/CriterionComputation.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/OuterLoopInputDataReader.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/CriterionInputDataReader.h
         ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/VariablesGroup.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/antares-xpansion/benders/benders_core/CouplingMapGenerator.h
 )
 
 add_library(antaresXpansion::benders_core ALIAS benders_core)
-
 
 target_include_directories(benders_core
         PUBLIC
