@@ -65,9 +65,7 @@ target_link_libraries(lp_namer_problem_modifier
         Antares::antares-solver-simulation
 )
 
-if (TBB_FOUND)
-    target_link_libraries(lp_namer_problem_modifier PRIVATE tbb)
-endif ()
+target_link_libraries(lp_namer_problem_modifier PRIVATE TBB::tbb)
 
 add_library(${PROJECT_NAME}::lp_namer_problem_modifier ALIAS lp_namer_problem_modifier)
 

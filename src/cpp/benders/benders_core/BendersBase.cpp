@@ -200,7 +200,7 @@ void BendersBase::UpdateStoppingCriterion() {
   else if (_data.lb + _options.ABSOLUTE_GAP >= _data.best_ub)
     _data.stopping_criterion = StoppingCriterion::absolute_gap;
   else if (((_data.best_ub - _data.lb) /
-            std::max(std::abs(_data.best_ub), std::abs(_data.lb))) <=
+            (std::max)(std::abs(_data.best_ub), std::abs(_data.lb))) <=
            _options.RELATIVE_GAP)
     _data.stopping_criterion = StoppingCriterion::relative_gap;
 }
@@ -843,7 +843,8 @@ void BendersBase::BoundSimplexIterations(int subproblem_iterations){
 void BendersBase::ResetSimplexIterationsBounds()
 {
 	_data.max_simplexiter = 0;
-	_data.min_simplexiter = std::numeric_limits<int>::max();
+  // Tbb 2020 includes Windows min max defines that's why we don't write std::numeric_limits<int>::max();
+  _data.min_simplexiter = (std::numeric_limits<int>::max)();
 }
 bool BendersBase::IsResumeMode() const { return _options.RESUME; }
 
