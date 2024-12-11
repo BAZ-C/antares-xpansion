@@ -44,7 +44,6 @@ CMakeFiles/*
 src/python/config.yaml
 src/python/antares_xpansion/__version__.py
 src/python/resources.py
-config-ui.yaml
 build_config.yaml
 
 # Tests

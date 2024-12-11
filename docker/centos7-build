@@ -46,8 +46,7 @@ WORKDIR /workspace/antares-xpansion
 
 RUN pip3 install --upgrade pip && \
     pip3 install wheel && \
-    pip3 install -r requirements-tests.txt && \
-    pip3 install -r requirements-ui.txt
+    pip3 install -r requirements-tests.txt
 
 # Accept build arguments for ccache
 ARG CCACHE_DIR
@@ -72,7 +71,6 @@ RUN  source /opt/rh/devtoolset-11/enable && \
       -DCMAKE_PREFIX_PATH="/deps;/ortools/install" \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=_install \
-      -DBUILD_UI=ON \
       -DALLOW_RUN_AS_ROOT=ON \
       -DVCPKG_TARGET_TRIPLET=x64-linux-release \
       -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake
