@@ -1,8 +1,5 @@
 var annotated_dup =
 [
-    [ "antares-xpansion-ui", null, [
-      [ "MainWidget", "classantares-xpansion-ui_1_1MainWidget.html", null ]
-    ] ],
     [ "antares_xpansion", "namespaceantares__xpansion.html", [
       [ "antares_driver", "namespaceantares__xpansion_1_1antares__driver.html", [
         [ "AntaresDriver", "classantares__xpansion_1_1antares__driver_1_1AntaresDriver.html", "classantares__xpansion_1_1antares__driver_1_1AntaresDriver" ]
@@ -128,6 +125,22 @@ var annotated_dup =
       ] ]
     ] ],
     [ "Benders", null, [
+      [ "Criterion", null, [
+        [ "CouldNotReadAreaField", "classBenders_1_1Criterion_1_1CouldNotReadAreaField.html", null ],
+        [ "CouldNotReadCriterionField", "classBenders_1_1Criterion_1_1CouldNotReadCriterionField.html", null ],
+        [ "CriterionComputation", "classBenders_1_1Criterion_1_1CriterionComputation.html", "classBenders_1_1Criterion_1_1CriterionComputation" ],
+        [ "CriterionInputData", "classBenders_1_1Criterion_1_1CriterionInputData.html", null ],
+        [ "CriterionInputFileError", "classBenders_1_1Criterion_1_1CriterionInputFileError.html", null ],
+        [ "CriterionInputFileIsEmpty", "classBenders_1_1Criterion_1_1CriterionInputFileIsEmpty.html", null ],
+        [ "CriterionInputFileNoPatternFound", "classBenders_1_1Criterion_1_1CriterionInputFileNoPatternFound.html", null ],
+        [ "CriterionInputFromYaml", "classBenders_1_1Criterion_1_1CriterionInputFromYaml.html", null ],
+        [ "CriterionInputPatternsShouldBeArray", "classBenders_1_1Criterion_1_1CriterionInputPatternsShouldBeArray.html", null ],
+        [ "CriterionPattern", "classBenders_1_1Criterion_1_1CriterionPattern.html", "classBenders_1_1Criterion_1_1CriterionPattern" ],
+        [ "CriterionSingleInputData", "classBenders_1_1Criterion_1_1CriterionSingleInputData.html", "classBenders_1_1Criterion_1_1CriterionSingleInputData" ],
+        [ "ICriterionInputDataReader", "classBenders_1_1Criterion_1_1ICriterionInputDataReader.html", null ],
+        [ "OuterLoopCriterionInputData", "classBenders_1_1Criterion_1_1OuterLoopCriterionInputData.html", null ],
+        [ "VariablesGroup", "classBenders_1_1Criterion_1_1VariablesGroup.html", null ]
+      ] ],
       [ "StartUp", "classBenders_1_1StartUp.html", null ]
     ] ],
     [ "Catch", null, [
@@ -135,6 +148,11 @@ var annotated_dup =
         [ "Approx", "classCatch_1_1Detail_1_1Approx.html", null ],
         [ "EnumInfo", "structCatch_1_1Detail_1_1EnumInfo.html", null ],
         [ "IsStreamInsertable", "classCatch_1_1Detail_1_1IsStreamInsertable.html", null ]
+      ] ],
+      [ "detail", null, [
+        [ "is_range_impl", "structCatch_1_1detail_1_1is__range__impl.html", null ],
+        [ "is_range_impl< T, typename void_type< decltype(begin(std::declval< T >()))>::type >", "structCatch_1_1detail_1_1is__range__impl_3_01T_00_01typename_01void__type_3_01decltype_07begin_0efe009a05f00a00c1e4e06989d122a22.html", null ],
+        [ "void_type", "structCatch_1_1detail_1_1void__type.html", null ]
       ] ],
       [ "Generators", null, [
         [ "as", "structCatch_1_1Generators_1_1as.html", null ],
@@ -211,7 +229,6 @@ var annotated_dup =
       [ "MessageStream", "structCatch_1_1MessageStream.html", null ],
       [ "NameAndTags", "structCatch_1_1NameAndTags.html", null ],
       [ "NonCopyable", "classCatch_1_1NonCopyable.html", null ],
-      [ "not_this_one", "structCatch_1_1not__this__one.html", null ],
       [ "pluralise", "structCatch_1_1pluralise.html", null ],
       [ "RegistrarForTagAliases", "structCatch_1_1RegistrarForTagAliases.html", null ],
       [ "ResultDisposition", "structCatch_1_1ResultDisposition.html", null ],
@@ -269,28 +286,15 @@ var annotated_dup =
       [ "XpansionError", "classLogUtils_1_1XpansionError.html", null ]
     ] ],
     [ "Outerloop", null, [
-      [ "BendersMpiOuterLoop", "classOuterloop_1_1BendersMpiOuterLoop.html", "classOuterloop_1_1BendersMpiOuterLoop" ],
-      [ "CriterionComputation", "classOuterloop_1_1CriterionComputation.html", null ],
+      [ "BendersMpiOuterLoop", "classOuterloop_1_1BendersMpiOuterLoop.html", null ],
       [ "CriterionCouldNotBeSatisfied", "classOuterloop_1_1CriterionCouldNotBeSatisfied.html", null ],
       [ "CutsManagerRunTime", "classOuterloop_1_1CutsManagerRunTime.html", null ],
       [ "ICutsManager", "classOuterloop_1_1ICutsManager.html", null ],
       [ "IMasterUpdate", "classOuterloop_1_1IMasterUpdate.html", null ],
-      [ "IOuterLoopInputDataReader", "classOuterloop_1_1IOuterLoopInputDataReader.html", null ],
       [ "MasterUpdateBase", "classOuterloop_1_1MasterUpdateBase.html", null ],
       [ "OuterLoop", "classOuterloop_1_1OuterLoop.html", null ],
       [ "OuterLoopBenders", "classOuterloop_1_1OuterLoopBenders.html", null ],
-      [ "OuterLoopBiLevel", "classOuterloop_1_1OuterLoopBiLevel.html", null ],
-      [ "OuterLoopCouldNotReadAreaField", "classOuterloop_1_1OuterLoopCouldNotReadAreaField.html", null ],
-      [ "OuterLoopCouldNotReadCriterionField", "classOuterloop_1_1OuterLoopCouldNotReadCriterionField.html", null ],
-      [ "OuterLoopInputData", "classOuterloop_1_1OuterLoopInputData.html", null ],
-      [ "OuterLoopInputFileError", "classOuterloop_1_1OuterLoopInputFileError.html", null ],
-      [ "OuterLoopInputFileIsEmpty", "classOuterloop_1_1OuterLoopInputFileIsEmpty.html", null ],
-      [ "OuterLoopInputFileNoPatternFound", "classOuterloop_1_1OuterLoopInputFileNoPatternFound.html", null ],
-      [ "OuterLoopInputFromYaml", "classOuterloop_1_1OuterLoopInputFromYaml.html", null ],
-      [ "OuterLoopInputPatternsShouldBeArray", "classOuterloop_1_1OuterLoopInputPatternsShouldBeArray.html", null ],
-      [ "OuterLoopPattern", "classOuterloop_1_1OuterLoopPattern.html", "classOuterloop_1_1OuterLoopPattern" ],
-      [ "OuterLoopSingleInputData", "classOuterloop_1_1OuterLoopSingleInputData.html", "classOuterloop_1_1OuterLoopSingleInputData" ],
-      [ "VariablesGroup", "classOuterloop_1_1VariablesGroup.html", null ]
+      [ "OuterLoopBiLevel", "classOuterloop_1_1OuterLoopBiLevel.html", null ]
     ] ],
     [ "Output", null, [
       [ "CandidateData", "structOutput_1_1CandidateData.html", null ],
@@ -338,6 +342,10 @@ var annotated_dup =
           [ "test_lpnamerEndToEnd", null, [
             [ "OptionType", "classtests_1_1end__to__end_1_1lpnamer_1_1test__lpnamerEndToEnd_1_1OptionType.html", null ]
           ] ]
+        ] ],
+        [ "utils_functions", null, [
+          [ "FilesToRead", "classtests_1_1end__to__end_1_1utils__functions_1_1FilesToRead.html", null ],
+          [ "Outputs", "classtests_1_1end__to__end_1_1utils__functions_1_1Outputs.html", null ]
         ] ]
       ] ],
       [ "python", "namespacetests_1_1python.html", [
@@ -408,8 +416,8 @@ var annotated_dup =
       ] ]
     ] ],
     [ "YAML", null, [
-      [ "convert< OuterLoopInputData >", "structYAML_1_1convert_3_01OuterLoopInputData_01_4.html", null ],
-      [ "convert< OuterLoopSingleInputData >", "structYAML_1_1convert_3_01OuterLoopSingleInputData_01_4.html", null ]
+      [ "convert< CriterionSingleInputData >", "classYAML_1_1convert_3_01CriterionSingleInputData_01_4.html", null ],
+      [ "convert< OuterLoopCriterionInputData >", "classYAML_1_1convert_3_01OuterLoopCriterionInputData_01_4.html", null ]
     ] ],
     [ "act", "classact.html", null ],
     [ "ActiveLink", "classActiveLink.html", null ],
@@ -434,6 +442,9 @@ var annotated_dup =
     [ "ArchiveUpdaterTest", "classArchiveUpdaterTest.html", null ],
     [ "ArchiveWriter", "classArchiveWriter.html", "classArchiveWriter" ],
     [ "ArchiveWriterTest", "classArchiveWriterTest.html", null ],
+    [ "AreaFileData", "structAreaFileData.html", null ],
+    [ "AreaFileError", "structAreaFileError.html", null ],
+    [ "AreaParser", "structAreaParser.html", null ],
     [ "BaseOptions", "structBaseOptions.html", null ],
     [ "Batch", "structBatch.html", null ],
     [ "BatchCollection", "classBatchCollection.html", null ],
@@ -459,6 +470,8 @@ var annotated_dup =
     [ "Clock", "classClock.html", null ],
     [ "ClockMock", "classClockMock.html", null ],
     [ "ColumnToChange", "structColumnToChange.html", null ],
+    [ "CouplingMapGenerator", "classCouplingMapGenerator.html", null ],
+    [ "CriteriaCurrentIterationData", "structCriteriaCurrentIterationData.html", null ],
     [ "CurrentIterationData", "structCurrentIterationData.html", null ],
     [ "DirectAccessScenarioToChronicleProvider", "classDirectAccessScenarioToChronicleProvider.html", null ],
     [ "EmptyLogger", "structEmptyLogger.html", "structEmptyLogger" ],
@@ -495,6 +508,7 @@ var annotated_dup =
     [ "InvalidSolverOptionException", "classInvalidSolverOptionException.html", null ],
     [ "InvalidSolverStatusException", "classInvalidSolverStatusException.html", null ],
     [ "InvalidStatusException", "classInvalidStatusException.html", null ],
+    [ "InvalidStructureFile", "structInvalidStructureFile.html", null ],
     [ "IProblemProviderPort", "classIProblemProviderPort.html", null ],
     [ "IProblemVariablesProviderPort", "classIProblemVariablesProviderPort.html", null ],
     [ "IProblemWriter", "classIProblemWriter.html", null ],
@@ -546,7 +560,6 @@ var annotated_dup =
     [ "OptionsParser", "classOptionsParser.html", "classOptionsParser" ],
     [ "OptionsParserTest", "classOptionsParserTest.html", null ],
     [ "OuterLoopBiLevelTest", "classOuterLoopBiLevelTest.html", null ],
-    [ "OuterLoopCurrentIterationData", "structOuterLoopCurrentIterationData.html", null ],
     [ "OuterLoopInputFromYamlTest", "classOuterLoopInputFromYamlTest.html", null ],
     [ "OuterLoopPatternTest", "classOuterLoopPatternTest.html", null ],
     [ "Predicate", "structPredicate.html", null ],
@@ -592,6 +605,7 @@ var annotated_dup =
     [ "SensitivityUserLoggerTest", "classSensitivityUserLoggerTest.html", null ],
     [ "SensitivityWriter", "classSensitivityWriter.html", null ],
     [ "SensitivityWriterTest", "classSensitivityWriterTest.html", null ],
+    [ "SettingsReader", "classSettingsReader.html", "classSettingsReader" ],
     [ "SimpleLoggerMock", "classSimpleLoggerMock.html", "classSimpleLoggerMock" ],
     [ "SimulationOptions", "classSimulationOptions.html", "classSimulationOptions" ],
     [ "SinglePbData", "structSinglePbData.html", null ],

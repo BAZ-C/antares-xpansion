@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Antares Xpansion" />
 <meta name="twitter:description" content="Investment simulations for Antares studies." />
 <!-- END twitter metadata -->
-<title>Antares Xpansion: src/cpp/benders/outer_loop/include/CriterionComputation.h Source File</title>
+<title>Antares Xpansion: src/cpp/benders/benders_core/include/antares-xpansion/benders/benders_core/CriterionComputation.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -141,37 +141,48 @@ $(document).ready(function(){initNavTree('CriterionComputation_8h_source.html','
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;OuterLoopInputDataReader.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;CriterionInputDataReader.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;VariablesGroup.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>Outerloop {</div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classOuterloop_1_1CriterionComputation.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="classOuterloop_1_1CriterionComputation.html">CriterionComputation</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classOuterloop_1_1CriterionComputation.html">CriterionComputation</a>(</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>      <span class="keyword">const</span> <a class="code hl_class" href="classOuterloop_1_1OuterLoopInputData.html">OuterLoopInputData</a> &amp;outer_loop_input_data);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keywordtype">void</span> SearchVariables(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;variables);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="comment">// outer loop criterion per pattern</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keywordtype">void</span> ComputeOuterLoopCriterion(</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      <span class="keywordtype">double</span> subproblem_weight, <span class="keyword">const</span> std::vector&lt;double&gt; &amp;sub_problem_solution,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      std::vector&lt;double&gt; &amp;outerLoopCriterions,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      std::vector&lt;double&gt; &amp;outerLoopPatternsValues);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;getVarIndices();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">const</span> <a class="code hl_class" href="classOuterloop_1_1OuterLoopInputData.html">OuterLoopInputData</a> &amp;getOuterLoopInputData() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::vector&lt;std::vector&lt;int&gt;&gt; var_indices_;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">const</span> <a class="code hl_class" href="classOuterloop_1_1OuterLoopInputData.html">OuterLoopInputData</a> &amp;outer_loop_input_data_;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>Benders::Criterion {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classBenders_1_1Criterion_1_1CriterionComputation.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="classBenders_1_1Criterion_1_1CriterionComputation.html">CriterionComputation</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classBenders_1_1Criterion_1_1CriterionComputation.html#aafb513fd40fb290e9617d8acd13f34b1">   12</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classBenders_1_1Criterion_1_1CriterionComputation.html#aafb513fd40fb290e9617d8acd13f34b1">CriterionComputation</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classBenders_1_1Criterion_1_1CriterionComputation.html#aafb513fd40fb290e9617d8acd13f34b1">CriterionComputation</a>(</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      <span class="keyword">const</span> <a class="code hl_class" href="classBenders_1_1Criterion_1_1CriterionInputData.html">CriterionInputData</a> &amp;criterion_input_data);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classBenders_1_1Criterion_1_1CriterionComputation.html#afdadb405893c73eeb131b5a730bf1e2f">SearchVariables</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;variables);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classBenders_1_1Criterion_1_1CriterionComputation.html#ab2bde9110d81505551c5f526bc840535">ComputeCriterion</a>(</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordtype">double</span> subproblem_weight, <span class="keyword">const</span> std::vector&lt;double&gt; &amp;sub_problem_solution,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      std::vector&lt;double&gt; &amp;criteria,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      std::vector&lt;double&gt; &amp;patterns_values);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;<a class="code hl_function" href="classBenders_1_1Criterion_1_1CriterionComputation.html#adf80b3ed1467ee37074bec423ff7cbe6">getVarIndices</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">const</span> <a class="code hl_class" href="classBenders_1_1Criterion_1_1CriterionInputData.html">CriterionInputData</a> &amp;<a class="code hl_function" href="classBenders_1_1Criterion_1_1CriterionComputation.html#ad97d8c7c6e6aee8f78805840f4932ad1">getCriterionInputData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  std::vector&lt;std::vector&lt;int&gt;&gt; var_indices_ = {};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_class" href="classBenders_1_1Criterion_1_1CriterionInputData.html">CriterionInputData</a> criterion_input_data_;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>};</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}  <span class="comment">// namespace Outerloop</span></div>
-<div class="ttc" id="aclassOuterloop_1_1CriterionComputation_html"><div class="ttname"><a href="classOuterloop_1_1CriterionComputation.html">Outerloop::CriterionComputation</a></div><div class="ttdef"><b>Definition</b> CriterionComputation.h:6</div></div>
-<div class="ttc" id="aclassOuterloop_1_1OuterLoopInputData_html"><div class="ttname"><a href="classOuterloop_1_1OuterLoopInputData.html">Outerloop::OuterLoopInputData</a></div><div class="ttdoc">this class contains all data read from user input file</div><div class="ttdef"><b>Definition</b> OuterLoopInputDataReader.h:79</div></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}  <span class="comment">// namespace Benders::Criterion</span></div>
+<div class="ttc" id="aclassBenders_1_1Criterion_1_1CriterionComputation_html"><div class="ttname"><a href="classBenders_1_1Criterion_1_1CriterionComputation.html">Benders::Criterion::CriterionComputation</a></div><div class="ttdef"><b>Definition</b> CriterionComputation.h:7</div></div>
+<div class="ttc" id="aclassBenders_1_1Criterion_1_1CriterionComputation_html_aafb513fd40fb290e9617d8acd13f34b1"><div class="ttname"><a href="classBenders_1_1Criterion_1_1CriterionComputation.html#aafb513fd40fb290e9617d8acd13f34b1">Benders::Criterion::CriterionComputation::CriterionComputation</a></div><div class="ttdeci">CriterionComputation()=default</div><div class="ttdoc">default constructor</div></div>
+<div class="ttc" id="aclassBenders_1_1Criterion_1_1CriterionComputation_html_ab2bde9110d81505551c5f526bc840535"><div class="ttname"><a href="classBenders_1_1Criterion_1_1CriterionComputation.html#ab2bde9110d81505551c5f526bc840535">Benders::Criterion::CriterionComputation::ComputeCriterion</a></div><div class="ttdeci">void ComputeCriterion(double subproblem_weight, const std::vector&lt; double &gt; &amp;sub_problem_solution, std::vector&lt; double &gt; &amp;criteria, std::vector&lt; double &gt; &amp;patterns_values)</div><div class="ttdoc">Computes the criteria based on subproblem solutions.</div><div class="ttdef"><b>Definition</b> CriterionComputation.cpp:5</div></div>
+<div class="ttc" id="aclassBenders_1_1Criterion_1_1CriterionComputation_html_ad97d8c7c6e6aee8f78805840f4932ad1"><div class="ttname"><a href="classBenders_1_1Criterion_1_1CriterionComputation.html#ad97d8c7c6e6aee8f78805840f4932ad1">Benders::Criterion::CriterionComputation::getCriterionInputData</a></div><div class="ttdeci">const CriterionInputData &amp; getCriterionInputData() const</div><div class="ttdoc">Retrieves the criterion input data.</div><div class="ttdef"><b>Definition</b> CriterionComputation.cpp:36</div></div>
+<div class="ttc" id="aclassBenders_1_1Criterion_1_1CriterionComputation_html_adf80b3ed1467ee37074bec423ff7cbe6"><div class="ttname"><a href="classBenders_1_1Criterion_1_1CriterionComputation.html#adf80b3ed1467ee37074bec423ff7cbe6">Benders::Criterion::CriterionComputation::getVarIndices</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; &amp; getVarIndices()</div><div class="ttdoc">Retrieves the variable indices.</div><div class="ttdef"><b>Definition</b> CriterionComputation.cpp:40</div></div>
+<div class="ttc" id="aclassBenders_1_1Criterion_1_1CriterionComputation_html_afdadb405893c73eeb131b5a730bf1e2f"><div class="ttname"><a href="classBenders_1_1Criterion_1_1CriterionComputation.html#afdadb405893c73eeb131b5a730bf1e2f">Benders::Criterion::CriterionComputation::SearchVariables</a></div><div class="ttdeci">void SearchVariables(const std::vector&lt; std::string &gt; &amp;variables)</div><div class="ttdoc">Searches for relevant variables based on the provided variable names.</div><div class="ttdef"><b>Definition</b> CriterionComputation.cpp:29</div></div>
+<div class="ttc" id="aclassBenders_1_1Criterion_1_1CriterionInputData_html"><div class="ttname"><a href="classBenders_1_1Criterion_1_1CriterionInputData.html">Benders::Criterion::CriterionInputData</a></div><div class="ttdoc">this class contains all data read from user input file</div><div class="ttdef"><b>Definition</b> CriterionInputDataReader.h:81</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_dfdbda394c3f7a3aa55229f33a559c41.html">cpp</a></li><li class="navelem"><a class="el" href="dir_ae16667f9fc0e5d86966b2c65475a56a.html">benders</a></li><li class="navelem"><a class="el" href="dir_f632cfb2f9433bf506b59b1a5d5e8528.html">outer_loop</a></li><li class="navelem"><a class="el" href="dir_10ca32da59bbdee17edcca9d1d408127.html">include</a></li><li class="navelem"><b>CriterionComputation.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_dfdbda394c3f7a3aa55229f33a559c41.html">cpp</a></li><li class="navelem"><a class="el" href="dir_ae16667f9fc0e5d86966b2c65475a56a.html">benders</a></li><li class="navelem"><a class="el" href="dir_b53e5bf8429ba9c17c53c8a945f0f679.html">benders_core</a></li><li class="navelem"><a class="el" href="dir_729c7454ac508d5ff85a80bc7bc4bc9a.html">include</a></li><li class="navelem"><a class="el" href="dir_5193f23a4e7e662c8447483db21d0cae.html">antares-xpansion</a></li><li class="navelem"><a class="el" href="dir_65d90d6a2bd106d71c05f593d54b14f6.html">benders</a></li><li class="navelem"><a class="el" href="dir_bc0f0c2c49f79414ffb0d87efed051ce.html">benders_core</a></li><li class="navelem"><b>CriterionComputation.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

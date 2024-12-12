@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Antares Xpansion" />
 <meta name="twitter:description" content="Investment simulations for Antares studies." />
 <!-- END twitter metadata -->
-<title>Antares Xpansion: src/cpp/benders/benders_core/include/SubproblemCut.h Source File</title>
+<title>Antares Xpansion: src/cpp/benders/benders_core/include/antares-xpansion/benders/benders_core/SubproblemCut.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -151,9 +151,9 @@ $(document).ready(function(){initNavTree('SubproblemCut_8h_source.html',''); ini
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structPlainData_1_1SubProblemData.html">    9</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPlainData_1_1SubProblemData.html">SubProblemData</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keywordtype">double</span> subproblem_cost;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  Point var_name_and_subgradient;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  std::vector&lt;double&gt; outer_loop_criterions;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  std::vector&lt;double&gt; criteria;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="comment">// no-supplied energy</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  std::vector&lt;double&gt; outer_loop_patterns_values;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  std::vector&lt;double&gt; patterns_values;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordtype">double</span> single_subpb_costs_under_approx;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordtype">double</span> subproblem_timer;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">int</span> simplex_iter;</div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('SubproblemCut_8h_source.html',''); ini
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> serialize(Archive &amp;ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    ar &amp; subproblem_cost;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    ar &amp; var_name_and_subgradient;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    ar &amp; outer_loop_criterions;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    ar &amp; criteria;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ar &amp; single_subpb_costs_under_approx;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ar &amp; subproblem_timer;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    ar &amp; simplex_iter;</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('SubproblemCut_8h_source.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_dfdbda394c3f7a3aa55229f33a559c41.html">cpp</a></li><li class="navelem"><a class="el" href="dir_ae16667f9fc0e5d86966b2c65475a56a.html">benders</a></li><li class="navelem"><a class="el" href="dir_b53e5bf8429ba9c17c53c8a945f0f679.html">benders_core</a></li><li class="navelem"><a class="el" href="dir_729c7454ac508d5ff85a80bc7bc4bc9a.html">include</a></li><li class="navelem"><b>SubproblemCut.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_dfdbda394c3f7a3aa55229f33a559c41.html">cpp</a></li><li class="navelem"><a class="el" href="dir_ae16667f9fc0e5d86966b2c65475a56a.html">benders</a></li><li class="navelem"><a class="el" href="dir_b53e5bf8429ba9c17c53c8a945f0f679.html">benders_core</a></li><li class="navelem"><a class="el" href="dir_729c7454ac508d5ff85a80bc7bc4bc9a.html">include</a></li><li class="navelem"><a class="el" href="dir_5193f23a4e7e662c8447483db21d0cae.html">antares-xpansion</a></li><li class="navelem"><a class="el" href="dir_65d90d6a2bd106d71c05f593d54b14f6.html">benders</a></li><li class="navelem"><a class="el" href="dir_bc0f0c2c49f79414ffb0d87efed051ce.html">benders_core</a></li><li class="navelem"><b>SubproblemCut.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
